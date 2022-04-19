@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+Route::resource('categorie-antecedent', 'App\Http\Controllers\CategorieAntecedentController');
+Route::resource('agent-sante', 'App\Http\Controllers\AgentSanteController');
+Route::resource('produit', 'App\Http\Controllers\ProduitsController');
