@@ -7,6 +7,7 @@
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="csrf-token" content="{{ csrf_token() }}"/>
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
@@ -21,7 +22,7 @@
 
         <!-- icons -->
         <link href="{{ asset('assets/css/icons.min.css') }}" rel="stylesheet" type="text/css" />
-
+        <link href="{{ asset('assets/libs/jconfirm/jquery-confirm.min.css')}}" rel="stylesheet" type="text/css" />
     </head>
 
     <body class="loading">
@@ -590,6 +591,18 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('gestations.index') }}">
+                                    
+                                    <span> Gestation </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('vaccins.index') }}">
+                                    
+                                    <span> Vaccin </span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="apps-calendar.html">
                                     <i data-feather="calendar"></i>
                                     <span> Calendar </span>
@@ -1056,6 +1069,45 @@
 
         <!-- App js -->
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
+        <script src="{{ asset('assets/libs/jconfirm/jquery-confirm.min.js') }}"></script>
+        <script>
+            $(document).ready(function() {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $('.btn-delete').on('click', function(e) {
+                    e.preventDefault();
+                    var url = $(this).attr('href');
+                    $.confirm({
+                        type: 'green',
+                        content: 'voulez vous supprimer cette ligne',
+                        title: 'Confirmation',
+                        theme: 'material',
+                        buttons: {
+                            OUI: function(){
+                                $.ajax({
+                                    url: url,
+                                    type: 'DELETE',
+                                    dataType: 'json',
+                                    success: function(data){
+
+                                    },
+                                    error: function(jqXHR, textStatus, errorTh){
+
+                                    }
+                                });
+                            },
+                            NON: function(){
+                                return true;
+                            }
+                        }
+                    }
+                    );
+                });
+            });
+        </script>
         
     </body>
 </html>
