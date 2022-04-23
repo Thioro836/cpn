@@ -19,3 +19,6 @@ Route::get('/', function () {
 Route::resource('categorie-ancetedent','App\Http\Controllers\CategorieAntecedentController');
 Route::resource('gestations','App\Http\Controllers\GestationController');
 Route::resource('vaccins','App\Http\Controllers\VaccinController');
+Route::resource('categorie-antecedent', 'App\Http\Controllers\CategorieAntecedentController');
+Route::resource('agent-sante', 'App\Http\Controllers\AgentSanteController');
+Route::resource('produit', 'App\Http\Controllers\ProduitsController');

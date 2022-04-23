@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{CategorieAntecedent};
-
-class CategorieAntecedentController extends Controller
+use App\Models\{AgentSante};
+class AgentSanteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +13,10 @@ class CategorieAntecedentController extends Controller
      */
     public function index()
     {
-        return view('categorie_antecedant',[
-            'listeCategories'=> CategorieAntecedent::get()
+        return view('agent_sante',[
+            'listeAgent'=>AgentSante::get()/*recuperer les info dans la bd*/
         ]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -26,7 +24,7 @@ class CategorieAntecedentController extends Controller
      */
     public function create()
     {
-        return view('formulaires.antecedent.categorie.create');
+        return view('formulaires.agent.create');
     }
 
     /**
@@ -37,10 +35,18 @@ class CategorieAntecedentController extends Controller
      */
     public function store(Request $request)
     {
-        CategorieAntecedent::create([
-            'nom_cat_antecedent' =>$request->nom
+        AgentSante::create([
+            'nom'  => $request->nom,
+            'prenom'=> $request->prenom,
+            'adresse'=> $request->adresse,
+            'email'  => $request->email,
+            'telephone' => $request->telephone,
+            'qualification' => $request->qualification,
+            'password'   => $request->password
         ]);
-        return back()->with('message',"enregistrement reussi");
+        return back()->with('message', "enregistrement reussi");
+
+        
     }
 
     /**
@@ -62,11 +68,10 @@ class CategorieAntecedentController extends Controller
      */
     public function edit($id)
     {
-        $categorie = CategorieAntecedent::find($id);
-        return view('formulaires.antecedent.categorie.edit', [
-            'categorie' => $categorie
-        ]);
-
+       $agent = AgentSante::find($id); //recuperer l'id de la ligne
+       return view('formulaires.agent.edit',[
+           'agent'=>$agent //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
+       ]);
     }
 
     /**
@@ -78,11 +83,11 @@ class CategorieAntecedentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categorie = CategorieAntecedent::find($id);
-        $categorie->update([
-            'nom_cat_antecedent'=>$request->nom
-        ]);
-        return  redirect('categorie-antecedent');
+        $agent=AgentSante::find($id);
+        $agent->update(
+            $request->all()
+        );
+        return  redirect('agent-sante');
     }
 
     /**
@@ -93,6 +98,6 @@ class CategorieAntecedentController extends Controller
      */
     public function destroy($id)
     {
-        CategorieAntecedent::find($id)->delete();
+        AgentSante::find($id)->delete();
     }
 }

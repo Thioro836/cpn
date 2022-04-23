@@ -3,9 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{CategorieAntecedent};
-
-class CategorieAntecedentController extends Controller
+use App\Models\{Produit};
+class ProduitsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +13,11 @@ class CategorieAntecedentController extends Controller
      */
     public function index()
     {
-        return view('categorie_antecedant',[
-            'listeCategories'=> CategorieAntecedent::get()
-        ]);
-    }
+      return view('produits',[
+        'listeproduits'=>Produit::get()/*recuperer les info dans la bd*/
+    ]);
 
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -26,8 +25,9 @@ class CategorieAntecedentController extends Controller
      */
     public function create()
     {
-        return view('formulaires.antecedent.categorie.create');
+        return view('formulaires.product.create');
     }
+
 
     /**
      * Store a newly created resource in storage.
@@ -37,10 +37,10 @@ class CategorieAntecedentController extends Controller
      */
     public function store(Request $request)
     {
-        CategorieAntecedent::create([
-            'nom_cat_antecedent' =>$request->nom
+        Produit::create([
+            'nom_produit' => $request->nom
         ]);
-        return back()->with('message',"enregistrement reussi");
+        return back()->with('message', "enregistrement reussi"); 
     }
 
     /**
@@ -62,11 +62,10 @@ class CategorieAntecedentController extends Controller
      */
     public function edit($id)
     {
-        $categorie = CategorieAntecedent::find($id);
-        return view('formulaires.antecedent.categorie.edit', [
-            'categorie' => $categorie
+        $produit=Produit::find($id);
+        return view('formulaires.product.edit',[
+            'produit'=>$produit
         ]);
-
     }
 
     /**
@@ -78,11 +77,11 @@ class CategorieAntecedentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $categorie = CategorieAntecedent::find($id);
-        $categorie->update([
-            'nom_cat_antecedent'=>$request->nom
+        $produit=Produit::find($id);
+        $produit->update([
+            'nom_produit'=>$request->nom
         ]);
-        return  redirect('categorie-antecedent');
+        return  redirect('produit');
     }
 
     /**
@@ -93,6 +92,6 @@ class CategorieAntecedentController extends Controller
      */
     public function destroy($id)
     {
-        CategorieAntecedent::find($id)->delete();
+        Produit::find($id)->delete();
     }
 }
