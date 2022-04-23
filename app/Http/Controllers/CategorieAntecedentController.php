@@ -94,5 +94,6 @@ class CategorieAntecedentController extends Controller
     public function destroy($id)
     {
         CategorieAntecedent::find($id)->delete();
+        return response(['status' =>true]);
     }
 }

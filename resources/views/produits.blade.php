@@ -9,7 +9,7 @@
         You can also invert the colors—with light text on dark backgrounds—with <code class="highlighter-rouge">.table-dark</code>.
     </p>
     <div class="table-responsive">
-        <table class="table table-dark mb-0">
+        <table class="table mb-0">
             <thead>
             <tr>
                 <th>#</th>

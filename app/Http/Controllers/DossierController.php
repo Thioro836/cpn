@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Produit};
-class ProduitsController extends Controller
+
+class DossierController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +13,9 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-      return view('produits',[
-        'listeproduits'=>Produit::get()/*recuperer les info dans la bd*/
-    ]);
-
+        return view('dossier');
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,9 +23,8 @@ class ProduitsController extends Controller
      */
     public function create()
     {
-        return view('formulaires.product.create');
+        //
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -37,10 +34,7 @@ class ProduitsController extends Controller
      */
     public function store(Request $request)
     {
-        Produit::create([
-            'nom_produit' => $request->nom
-        ]);
-        return back()->with('message', "enregistrement reussi"); 
+        //
     }
 
     /**
@@ -62,10 +56,7 @@ class ProduitsController extends Controller
      */
     public function edit($id)
     {
-        $produit=Produit::find($id);
-        return view('formulaires.product.edit',[
-            'produit'=>$produit
-        ]);
+        //
     }
 
     /**
@@ -77,11 +68,7 @@ class ProduitsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produit=Produit::find($id);
-        $produit->update([
-            'nom_produit'=>$request->nom
-        ]);
-        return  redirect('produit');
+        //
     }
 
     /**
@@ -92,7 +79,6 @@ class ProduitsController extends Controller
      */
     public function destroy($id)
     {
-        Produit::find($id)->delete();
-        return response(['status' =>true]);
+        //
     }
 }

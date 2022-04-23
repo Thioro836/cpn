@@ -95,5 +95,6 @@ class VaccinController extends Controller
     public function destroy($id)
     {
         Vaccin::find($id)->delete();
+        return response(['status' =>true]);
     }
 }

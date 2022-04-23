@@ -99,5 +99,6 @@ class AgentSanteController extends Controller
     public function destroy($id)
     {
         AgentSante::find($id)->delete();
+        return response(['status' =>true]);
     }
 }

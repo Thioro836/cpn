@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Produit};
-class ProduitsController extends Controller
+use App\Models\{Patient};
+
+class PatientController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +14,11 @@ class ProduitsController extends Controller
      */
     public function index()
     {
-      return view('produits',[
-        'listeproduits'=>Produit::get()/*recuperer les info dans la bd*/
-    ]);
-
+        return view('patient',[
+            'listePatients'=>Patient::paginate(15)/*recuperer les info dans la bd*/
+        ]);
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -25,9 +26,8 @@ class ProduitsController extends Controller
      */
     public function create()
     {
-        return view('formulaires.product.create');
+        return view('formulaires.patient.create');
     }
-
 
     /**
      * Store a newly created resource in storage.
@@ -37,10 +37,10 @@ class ProduitsController extends Controller
      */
     public function store(Request $request)
     {
-        Produit::create([
-            'nom_produit' => $request->nom
-        ]);
-        return back()->with('message', "enregistrement reussi"); 
+        Patient::create(
+            $request->all()
+        );
+        return back()->with('message', "enregistrement reussi");
     }
 
     /**
@@ -62,10 +62,10 @@ class ProduitsController extends Controller
      */
     public function edit($id)
     {
-        $produit=Produit::find($id);
-        return view('formulaires.product.edit',[
-            'produit'=>$produit
-        ]);
+        $patient = Patient::find($id); //recuperer l'id de la ligne
+       return view('formulaires.patient.edit',[
+           'patient'=>$patient //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
+       ]);
     }
 
     /**
@@ -77,11 +77,11 @@ class ProduitsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $produit=Produit::find($id);
-        $produit->update([
-            'nom_produit'=>$request->nom
-        ]);
-        return  redirect('produit');
+        $patient = Patient::find($id);
+        $patient->update(
+            $request->all()
+        );
+        return  redirect('patients');
     }
 
     /**
@@ -92,7 +92,7 @@ class ProduitsController extends Controller
      */
     public function destroy($id)
     {
-        Produit::find($id)->delete();
+        Patient::find($id)->delete();
         return response(['status' =>true]);
     }
 }

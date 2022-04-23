@@ -93,5 +93,6 @@ class GestationController extends Controller
     public function destroy($id)
     {
         Gestation::find($id)->delete();
+        return response(['status' =>true]);
     }
 }

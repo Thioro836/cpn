@@ -603,11 +603,29 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('agent-sante.index') }}">
+                                    
+                                    <span> Agent santé </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('produit.index') }}">
+                                    
+                                    <span> Produit </span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('patients.index') }}">
+                                    
+                                    <span> Patient </span>
+                                </a>
+                            </li>
+                            {{-- <li>
                                 <a href="apps-calendar.html">
                                     <i data-feather="calendar"></i>
                                     <span> Calendar </span>
                                 </a>
-                            </li>
+                            </li> --}}
                         </ul>
                     </div>
                     <!-- End Sidebar -->
@@ -1080,6 +1098,7 @@
                 $('.btn-delete').on('click', function(e) {
                     e.preventDefault();
                     var url = $(this).attr('href');
+                    var tr = $(this).parents('tr');
                     $.confirm({
                         type: 'green',
                         content: 'voulez vous supprimer cette ligne',
@@ -1092,7 +1111,8 @@
                                     type: 'DELETE',
                                     dataType: 'json',
                                     success: function(data){
-
+                                       $(tr).remove();
+                                       //alert('test');
                                     },
                                     error: function(jqXHR, textStatus, errorTh){
 
