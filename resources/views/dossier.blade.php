@@ -34,9 +34,9 @@
                                         </div>
                                         <div class="col pl-0">
                                             <a href="javascript:void(0);" class="text-muted font-weight-bold">
-                                                {{ $dossiers-> numero_dossier }}
+                                                {{ $dossier->numero_dossier }}
                                             </a>
-                                            <p class="mb-0 font-13"> {{ $dossiers-> date_enregistrement }}</p>
+                                            <p class="mb-0 font-13"> {{ $dossier->date_enregistrement }}</p>
                                         </div>
                                     </div> <!-- end row -->
                                 </div> <!-- end .p-2-->
