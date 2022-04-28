@@ -33,7 +33,7 @@
                                             </div>
                                         </div>
                                         <div class="col pl-0">
-                                            <a href="javascript:void(0);" class="text-muted font-weight-bold">
+                                            <a href="{{ route('consultations.index', ['dossier'=> $dossier->id_dossier]) }}" class="text-muted font-weight-bold">
                                                 {{ $dossiers-> numero_dossier }}
                                             </a>
                                             <p class="mb-0 font-13"> {{ $dossiers-> date_enregistrement }}</p>
