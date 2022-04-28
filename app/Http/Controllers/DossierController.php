@@ -27,7 +27,7 @@ class DossierController extends Controller
      */
     public function create()
     {
-        //
+    
     }
 
     /**
@@ -38,7 +38,15 @@ class DossierController extends Controller
      */
     public function store(Request $request)
     {
-        
+        Dossier::create([
+        'date_derniere_regle'=>$request->date_derniere_regle,
+        'dure_cycle'=>$request->dure_cycle,
+        'hadicap_pysique'=>$request->handicap_physique,
+        'groupe_sanguin'=>$request->groupe_sanguin,
+        'taille_patiente'=>$request->taille_patiente,
+        'dap'=>$request->dap
+        ]);
+        return back()->with('message',"enregistrement reussi");
     }
 
     /**
