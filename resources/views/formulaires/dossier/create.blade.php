@@ -1,5 +1,6 @@
 <div class="card-box">
-    <form action="">
+    <form action="{{ route('dossiers.store') }}" method="POST">
+        @csrf 
        <input type="hidden" name="patient" value="{{  $patient->id_patient }}">
         <div class="form-group">
             <label for="date_derniere_regle">date des dernières règes </label>
