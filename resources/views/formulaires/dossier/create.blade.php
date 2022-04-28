@@ -1,6 +1,6 @@
 <div class="card-box">
     <form action="">
-       
+       <input type="hidden" name="patient" value="{{  $patient->id_patient }}">
         <div class="form-group">
             <label for="date_derniere_regle">date des dernières règes </label>
             <input class="form-control" type="date" name="date_derniere_regle" id="date_derniere_regle">
