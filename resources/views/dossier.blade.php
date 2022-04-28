@@ -34,7 +34,7 @@
                                         </div>
                                         <div class="col pl-0">
                                             <a href="{{ route('consultations.index', ['dossier'=> $dossier->id_dossier]) }}" class="text-muted font-weight-bold">
-                                                {{ $dossiers-> numero_dossier }}
+                                                {{ $dossier->numero_dossier }}
                                             </a>
                                             <p class="mb-0 font-13"> {{ $dossier->date_enregistrement }}</p>
                                         </div>

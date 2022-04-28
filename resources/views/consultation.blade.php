@@ -38,7 +38,7 @@
                         </tr>
                         </thead>
                         <tbody>
-                            @foreach ( $listeConsultations as $key=> $consultation )
+                            @foreach ( $consultations as $key=> $consultation )
                             <tr>
                                 <th scope="row">{{ $key+1 }}</th>
                                 <td>{{ $consultation->date_consultation }}</td>
@@ -47,13 +47,13 @@
                                 <td>{{ $consultation->haut_uterine}}</td>
                                 <td>{{ $consultation->tension_arterielle}}</td>
                                 <td class="text-right">
-                                    <a href="{{  }}"  class="btn btn-success">      
+                                    <a href=" "  class="btn btn-success">      
                                         Dossiers
                                         </a>
-                                    <a href="{{  }}" class="btn btn-info">
+                                    <a href=" " class="btn btn-info">
                                         Modifier
                                     </a>
-                                    <a href="{{  }}" class="btn btn-danger btn-delete">
+                                    <a href=" " class="btn btn-danger btn-delete">
                                       Supprimer
                                     </a>
                             </tr>
