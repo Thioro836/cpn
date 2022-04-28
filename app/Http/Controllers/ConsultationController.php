@@ -1,22 +1,22 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\{Consultation,DossierPatient};
 use Illuminate\Http\Request;
-use App\Models\{DossierPatient,Patient};
-class DossierController extends Controller
+
+class ConsultationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index( Request $request)
+    public function index(Request $request)
     {
-        $patient=Patient::find($request->patient);
-        return view('dossier',[
-            'patient'=>$patient,
-            'dossiers'=>$patient->dossierPatients()->orderBy('date_enregistrement' ,'desc')->get()
+        $dossier=DossierPatient::find($request->dossier);
+        return view ('consultation',[
+            'dossier'=>$dossier,
+            'consultations'=>$dossier->consultations()->get()
         ]);
     }
 
@@ -25,9 +25,12 @@ class DossierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-    
+        $dossier=DossierPatient::find($request->dossier);
+        return view('formulaires.consultation.create',[
+            'dossier'=>$dossier,
+        ]);
     }
 
     /**
@@ -38,18 +41,7 @@ class DossierController extends Controller
      */
     public function store(Request $request)
     {
-        DossierPatient::create([
-        'date_derniere_regle'=>$request->date_derniere_regle,
-        'dure_cycle'=>$request->dure_cycle,
-        'date_enregistrement'=>now(),
-        'hadicap_pysique'=>($request->handicap_physique == 'oui'),
-        'groupe_sanguin'=>$request->groupe_sanguin,
-        'taille_patiente'=>$request->taille_patiente,
-        'dap'=>$request->dap,
-         'id_patient'=>$request->patient,
-         'numero_dossier'=>'001'
-        ]);
-        return back()->with('message',"enregistrement reussi");
+        
     }
 
     /**
