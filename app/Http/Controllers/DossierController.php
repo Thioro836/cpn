@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Models\{Dossier,Patient};
 class DossierController extends Controller
 {
     /**
@@ -11,9 +11,13 @@ class DossierController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index( Request $request)
     {
-        return view('dossier');
+        $patient=Patient::find($request->patient);
+        return view('dossier',[
+            'patient'=>$patient,
+            'dossiers'=>$patient->dossierPatients
+        ]);
     }
 
     /**
@@ -34,7 +38,7 @@ class DossierController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
