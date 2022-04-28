@@ -1083,7 +1083,11 @@
         <!-- Vendor js -->
         <script src="{{ asset('assets/js/vendor.min.js') }}"></script>
 
-      
+         <!-- Plugins js-->
+         <script src="{{ asset('assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}"></script>
+
+         <!-- Init js-->
+         <script src="{{ asset('assets/js/pages/form-wizard.init.js') }}"></script>
 
         <!-- App js -->
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
