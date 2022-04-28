@@ -36,7 +36,7 @@
                                             <a href="{{ route('consultations.index', ['dossier'=> $dossier->id_dossier]) }}" class="text-muted font-weight-bold">
                                                 {{ $dossiers-> numero_dossier }}
                                             </a>
-                                            <p class="mb-0 font-13"> {{ $dossiers-> date_enregistrement }}</p>
+                                            <p class="mb-0 font-13"> {{ $dossier->date_enregistrement }}</p>
                                         </div>
                                     </div> <!-- end row -->
                                 </div> <!-- end .p-2-->

@@ -37,6 +37,7 @@ class Antecedent extends Model
 		'id_categorie_antecedent'
 	];
 
+	
 	public function categorieAntecedent()
 	{
 		return $this->belongsTo(CategorieAntecedent::class, 'id_categorie_antecedent');
