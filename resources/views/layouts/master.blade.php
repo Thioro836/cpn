@@ -585,7 +585,7 @@
 
                         <ul id="side-menu">
                             <li>
-                                <a href="{{ route('categorie-ancetedent.index') }}">
+                                <a href="{{ route('categorie-antecedent.index') }}">
                                     
                                     <span> Categorie antecedent </span>
                                 </a>

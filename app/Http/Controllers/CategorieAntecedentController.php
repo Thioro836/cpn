@@ -14,7 +14,7 @@ class CategorieAntecedentController extends Controller
      */
     public function index()
     {
-        return view('categorie_antecedant',[
+        return view('categorie_antecedent',[
             'listeCategories'=> CategorieAntecedent::get()
         ]);
     }

@@ -1,5 +1,21 @@
 @extends('layouts.master')
 @section('content')
+<div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">
+                        {{ config('app.name') }}
+                    </a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Categorie Antecedent</a></li>
+                    <li class="breadcrumb-item active">Liste</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Liste des categories d'antécedent </h4>
+        </div>
+    </div>
+</div>
 <div class="card-box mt-5">
     <a href="{{ route('categorie-antecedent.create') }} " class="btn btn-primary mb-3">
         Ajouter une catégorie d'antécedent
@@ -10,7 +26,7 @@
     </p>
 
     <div class="table-responsive">
-        <table class="table table-dark mb-0">
+        <table class="table mb-0">
             <thead>
             <tr>
                 <th>#</th>
