@@ -12,10 +12,10 @@
     <input class="form-control" type="text" name="haut_uterine" id="haut_uterine">
 </div>
 <div class="row">
-    @foreach (page_1() as $name => $question )
+    @foreach (page_1() as $name => $question)
         <div class="col-md-4">
-            <div class="checkbox checkbox-success form-check-inline">
-                <input name="{{ $name }}" type="checkbox" id="{{ $name }}" >
+            <div class="checkbox checkbox-success form-check-inline ml-1 mb-2">
+                <input name="{{ $name }}" type="checkbox" id="{{ $name }}">
                 <label for="{{ $name }}"> {{ $question }} </label>
             </div>
         </div>

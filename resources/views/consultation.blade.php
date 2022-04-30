@@ -20,8 +20,8 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-box">
-            <a href="{{ route('consultations.create') }}" class="btn btn-primary mt-3">
-                Ajouter une patiente
+            <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3">
+                Nouvelle consultation
             </a>
             <div class="row">
                 <table class="table mb-0">

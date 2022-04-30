@@ -50,6 +50,7 @@
                                 </li>
                                 <li class="next list-inline-item float-right">
                                     <a href="javascript: void(0);" class="btn btn-secondary">Next</a>
+                                    <button class="btn btn-success" type="submit">Enregistrer</button>
                                 </li>
                             </ul>
 

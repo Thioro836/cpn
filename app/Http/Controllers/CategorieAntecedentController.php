@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{CategorieAntecedent};
+use App\Http\Requests\CategorieAntecedentRequest; 
 
 class CategorieAntecedentController extends Controller
 {
@@ -35,7 +36,7 @@ class CategorieAntecedentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CategorieAntecedentRequest $request)
     {
         CategorieAntecedent::create([
             'nom_cat_antecedent' =>$request->nom
