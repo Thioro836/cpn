@@ -1,4 +1,6 @@
-<p>Suspicion d'un bassin retreci (boiterie, handcap physique) DAP< 18 cm</p>
+<div class="row">
+    <div  class="col-md-4">
+        <p>Suspicion d'un bassin retreci (boiterie, handcap physique) DAP< 18 cm</p>
 <div class="radio radio-info form-check-inline ml-1 mb-2">
     <input type="radio" id="suspicion_bassin_retreci_O" value="oui" name="suspicion_bassin_retreci" checked="">
     <label for="suspicion_bassin_retreci_O"> Oui </label>
@@ -34,7 +36,9 @@
     <input type="radio" id="primapare_N" value="non" name="primapare" checked="">
     <label for="primapare_N"> Non </label>
 </div>
-<p>taille> 150 cm</p>
+    </div>
+    <div class="col-md-4">
+        <p>taille> 150 cm</p>
 <div class="radio radio-info form-check-inline ml-1 mb-2">
     <input type="radio" id="taille_O" value="oui" name="taille" checked="">
     <label for="taille_O"> Oui </label>
@@ -70,6 +74,11 @@
     <input type="radio" id="srv_N" value="non" name="srv" checked="">
     <label for="srv_N"> Non </label>
 </div>
+    </div>
+
+</div>
+
+
 <p>thb</p>
 <div class="radio radio-info form-check-inline ml-1 mb-2">
     <input type="radio" id="thb_O" value="oui" name="thb" checked="">
