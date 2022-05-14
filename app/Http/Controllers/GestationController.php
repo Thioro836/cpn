@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\GestationRequest; 
 
 use Illuminate\Http\Request;
 use App\Models\{Gestation};
+
 
 class GestationController extends Controller
 {
@@ -35,7 +37,7 @@ class GestationController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GestationRequest $request)
     {
         Gestation::create([
             'nom_gestation' =>$request->nom

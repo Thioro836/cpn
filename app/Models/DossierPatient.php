@@ -72,7 +72,8 @@ class DossierPatient extends Model
 		'taille_patiente',
 		'dap',
 		'id_patient',
-		'id_accouchement'
+		'id_accouchement',
+		'age_gestationnel'
 	];
 
 	public function patient()
