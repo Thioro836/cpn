@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Vaccin};
-
+use App\Http\Requests\VaccinRequest; 
 class VaccinController extends Controller
 {
     /**
@@ -35,7 +35,7 @@ class VaccinController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(VaccinRequest $request)
     {
         Vaccin::create([
             'nom_vaccin' =>$request->nom,
