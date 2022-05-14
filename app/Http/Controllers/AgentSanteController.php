@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{AgentSante};
+use App\Http\Requests\AgentSanteRequest;
 class AgentSanteController extends Controller
 {
     /**
@@ -33,7 +34,7 @@ class AgentSanteController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(AgentSanteRequest $request)
     {
         AgentSante::create([
             'nom'  => $request->nom,

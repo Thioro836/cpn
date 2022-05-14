@@ -1,12 +1,25 @@
 @extends('layouts.master')
 @section('content')
 <div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">
+                        {{ config('app.name') }}
+                    </a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Agent santé</a></li>
+                    <li class="breadcrumb-item active">Modifiaction</li>
+                </ol>
+            </div>
+            <h4 class="page-title">Modification des informations d'un agent</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-md-6" >
         <div class="card-box">
-            @if (\Session::has('message'))
-                <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
-            
-            @endif
+            @include('layouts.message')
             <form action="{{ route('agent-sante.update',$agent->id_agent) }}" method="POST">
             @csrf 
             @method('PUT')
