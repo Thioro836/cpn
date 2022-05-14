@@ -1,13 +1,31 @@
 @extends('layouts.master')
 @section('content')
 <div class="row">
+    <div class="col-12">
+        <div class="page-title-box">
+            <div class="page-title-right">
+                <ol class="breadcrumb m-0">
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">
+                        {{ config('app.name') }}
+                    </a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Consultation</a></li>
+                    <li class="breadcrumb-item active">Creation</li>
+                </ol>
+            </div>
+            <h4 class="page-title">enregistrement d'une consultation</h4>
+        </div>
+    </div>
+</div>
+<div class="row">
     <div class="col-xl-6">
         <div class="card">
             <div class="card-body">
 
-                <h4 class="header-title mb-3"> Basic Wizard</h4>
+                <h4 class="header-title mb-3"> Formulaire de consultation</h4>
 
-                <form>
+                <form method="post" action="{{ route('consultations.store')}}">
+                    @csrf
+                    <input type="hidden" value="{{ $dossier->id_dossier}}" name="dossier">
                     <div id="basicwizard">
 
                         <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-4">
@@ -26,7 +44,7 @@
                             <li class="nav-item">
                                 <a href="#basictab3" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                     <i class="mdi mdi-checkbox-marked-circle-outline mr-1"></i>
-                                    <span class="d-none d-sm-inline">Finish</span>
+                                    <span class="d-none d-sm-inline">Facteurs de risque</span>
                                 </a>
                             </li>
                         </ul>

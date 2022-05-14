@@ -3,9 +3,7 @@
 <div class="row">
     <div class="col-md-6">
         <div class="card-box">
-            @if (\Session::has('message'))
-            <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
-        @endif
+            @include('layouts.message')
             <form action="{{ route('gestations.store') }}" method="post">
                 @csrf
                 <div class="form-group">
