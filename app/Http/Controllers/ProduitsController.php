@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Produit};
+use App\Http\Requests\ProduitRequest; 
 class ProduitsController extends Controller
 {
     /**
@@ -35,7 +36,7 @@ class ProduitsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(ProduitRequest $request)
     {
         Produit::create([
             'nom_produit' => $request->nom
