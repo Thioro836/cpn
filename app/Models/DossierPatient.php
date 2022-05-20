@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class DossierPatient
- * 
+ *
  * @property int $id_dossier
  * @property string $numero_dossier
  * @property Carbon $date_enregistrement
@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property float $dap
  * @property int $id_patient
  * @property int $id_accouchement
- * 
+ *
  * @property Patient $patient
  * @property PlanAccouchement $planAccouchement
  * @property Collection|Consultation[] $consultations

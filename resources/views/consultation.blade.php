@@ -20,7 +20,7 @@
 <div class="row">
     <div class="col-md-12">
         <div class="card-box">
-            <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3">
+            <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2">
                 Nouvelle consultation
             </a>
             <div class="row">
@@ -29,12 +29,12 @@
                         <tr>
                            <th>#</th>
                            <th>Date consultation</th>
-                           <th>Age gestationel</th>
-                           <th>Poids</th>
-                           <th>Hauteur utérine</th>
-                           <th>Tension Arterielle</th>
+                           <th class="text-right">Age gestationel</th>
+                           <th class="text-right">Poids</th>
+                           <th class="text-right">Hauteur utérine</th>
+                           <th class="text-right">Tension Arterielle</th>
                            <th class="text-right">Actions</th>
-                           
+
                         </tr>
                         </thead>
                         <tbody>
@@ -42,12 +42,12 @@
                             <tr>
                                 <th scope="row">{{ $key+1 }}</th>
                                 <td>{{ $consultation->date_consultation }}</td>
-                                <td>{{ $consultation->age_gestationnel }}</td>
-                                <td>{{ $consultation->poids }}</td>
-                                <td>{{ $consultation->haut_uterine}}</td>
-                                <td>{{ $consultation->tension_arterielle}}</td>
+                                <td class="text-right">{{ $consultation->age_gestationnel }} mois</td>
+                                <td class="text-right">{{ $consultation->poids }} Kg</td>
+                                <td class="text-right">{{ $consultation->haut_uterine}} cm</td>
+                                <td class="text-right">{{ $consultation->tension_arterielle}}</td>
                                 <td class="text-right">
-                                  
+
                                     <a href="{{ route('consultations.edit', $consultation->id_consultation) }} " class="btn btn-info">
                                         Modifier
                                     </a>
@@ -56,7 +56,7 @@
                                         Supprimer
                                       </a>
                                     @endif
-                                    
+
                             </tr>
                             @endforeach
 
@@ -64,6 +64,6 @@
             </div>
         </div>
     </div>
-   
+
 </div>
 @endsection

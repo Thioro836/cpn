@@ -17,7 +17,7 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-xl-6">
+    <div class="col-xl-8">
         <div class="card">
             <div class="card-body">
 
@@ -30,7 +30,7 @@
 
                         <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-4">
                             <li class="nav-item">
-                                <a href="#basictab1" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2 active"> 
+                                <a href="#basictab1" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2 active">
                                     <i class="mdi mdi-account-circle mr-1"></i>
                                     <span class="d-none d-sm-inline">Examen</span>
                                 </a>
@@ -79,7 +79,9 @@
             </div> <!-- end card-body -->
         </div> <!-- end card-->
     </div> <!-- end col -->
+    <div class="col-sm-4">
+        <img src="{{ asset("assets/images/femme-2.jpg") }}" alt="image" class="img-fluid rounded">
+    </div>
 
-    
 </div>
 @endsection

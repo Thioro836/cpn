@@ -41,7 +41,7 @@ class ConsultationController extends Controller
      */
     public function store(Request $request)
     {
-        
+
         Consultation::create([
             'date_consultation'=>now(),
             'age_gestationnel' => $request->age_gestationnel,
@@ -111,6 +111,7 @@ class ConsultationController extends Controller
     public function update(Request $request, $id)
     {
         $consultation= Consultation::find($id);
+
         $consultation->update([
             'date_consultation'=>now(),
             'age_gestationnel' => $request->age_gestationnel,
@@ -137,10 +138,9 @@ class ConsultationController extends Controller
             'position_transverse' => $request->has('position_transverse'),
             'siege' => $request->has('siege'),
             'gemellaire' => $request->has('gemellaire'),
-            
         ]);
-       
-        return redirect('consultations');
+
+        return redirect("/consultations?dossier={$consultation->dossierPatient->id_dossier}");
     }
 
     /**

@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Consultation
- * 
+ *
  * @property int $id_consultation
  * @property Carbon $date_consultation
  * @property int $age_gestationnel
@@ -40,7 +40,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property bool|null $siege
  * @property bool|null $gemellaire
  * @property int $id_dossier
- * 
+ *
  * @property DossierPatient $dossierPatient
  * @property Collection|AgentSante[] $agentSantes
  * @property Collection|Produit[] $produits
