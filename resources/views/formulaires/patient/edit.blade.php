@@ -3,10 +3,7 @@
 <div class="row">
     <div class="col-md-6" >
         <div class="card-box">
-            @if (\Session::has('message'))
-                <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
-            
-            @endif
+            @include('layouts.message')
             <form action="{{ route('patients.update',$patient->id_patient) }}" method="POST">
             @csrf 
             @method('PUT')
@@ -36,7 +33,7 @@
             </div>
             <div class="form-group">
                 <label for="telephone_patient">Téléphone patiente</label>
-                <input type="text"name="telephone_patient" class="form-control" id="telephone_patient" value="{{ $patient->telephone_patient }}"
+                <input type="text"name="telephone_patient" class="form-control" id="telephone_patient" value="{{ $patient->telephone_patient }}">
             </div>
             <h4>Identification du mari</h4>
             <div class="form-group">
@@ -49,19 +46,19 @@
             </div>
             <div class="form-group">
                 <label for="adresse_mari">Adresse </label>
-                <input type="text"name="adresse_mari" class="form-control" id="adresse_mari" value="{{ $patient->adresse_mari }}"
+                <input type="text"name="adresse_mari" class="form-control" id="adresse_mari" value="{{ $patient->adresse_mari }}">
             </div>
             <div class="form-group">
                 <label for="secteur_mari">Secteur </label>
-                <input type="text"name="secteur_mari" class="form-control" id="secteur_mari" value="{{ $patient->secteur_mari }}"
+                <input type="text"name="secteur_mari" class="form-control" id="secteur_mari" value="{{ $patient->secteur_mari }}">
             </div>
             <div class="form-group">
                 <label for="profession_mari">Profession </label>
-                <input type="text"name="profession_mari" class="form-control" id="profession_mari" value="{{ $patient->profession_mari }}"
+                <input type="text"name="profession_mari" class="form-control" id="profession_mari" value="{{ $patient->profession_mari }}">
             </div>
             <div class="form-group">
                 <label for="telephone_mari">Téléphone </label>
-                <input type="text"name="telephone_mari" class="form-control" id="telephone_mari" value="{{ $patient->telephone_mari }}"
+                <input type="text"name="telephone_mari" class="form-control" id="telephone_mari" value="{{ $patient->telephone_mari }}">
             </div>
             
             <button class="btn btn-success " type="submit">enregistrer</button>
