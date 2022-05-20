@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Patient};
+use App\Http\Requests\AgentSanteRequest;
 
 class PatientController extends Controller
 {
@@ -35,7 +36,7 @@ class PatientController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PatientRequest $request)
     {
         Patient::create(
             $request->all()

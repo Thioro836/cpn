@@ -9,10 +9,10 @@
                         {{ config('app.name') }}
                     </a></li>
                     <li class="breadcrumb-item"><a href="javascript: void(0);">Consultation</a></li>
-                    <li class="breadcrumb-item active">Creation</li>
+                    <li class="breadcrumb-item active">Modification</li>
                 </ol>
             </div>
-            <h4 class="page-title">enregistrement d'une consultation</h4>
+            <h4 class="page-title">Modification d'une consultation</h4>
         </div>
     </div>
 </div>
@@ -23,9 +23,9 @@
 
                 <h4 class="header-title mb-3"> Formulaire de consultation</h4>
 
-                <form method="post" action="{{ route('consultations.store')}}">
+                <form method="post" action="{{ route('consultations.update',$consultation->id_consultation)}}">
                     @csrf
-                    <input type="hidden" value="{{ $dossier->id_dossier}}" name="dossier">
+                    @method('PUT')
                     <div id="basicwizard">
 
                         <ul class="nav nav-pills bg-light nav-justified form-wizard-header mb-4">
@@ -51,15 +51,15 @@
 
                         <div class="tab-content b-0 mb-0 pt-0">
                             <div class="tab-pane active" id="basictab1">
-                                @include('formulaires.consultation.pages.create.page_1')
+                                @include('formulaires.consultation.pages.edit.page_1')
                             </div>
 
                             <div class="tab-pane" id="basictab2">
-                                @include('formulaires.consultation.pages.create.page_2')
+                                @include('formulaires.consultation.pages.edit.page_2')
                             </div>
 
                             <div class="tab-pane" id="basictab3">
-                               @include('formulaires.consultation.pages.create.page_3')
+                               @include('formulaires.consultation.pages.edit.page_3')
                             </div>
 
                             <ul class="list-inline wizard mb-0">

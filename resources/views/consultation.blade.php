@@ -47,15 +47,16 @@
                                 <td>{{ $consultation->haut_uterine}}</td>
                                 <td>{{ $consultation->tension_arterielle}}</td>
                                 <td class="text-right">
-                                    <a href=" "  class="btn btn-success">      
-                                        Dossiers
-                                        </a>
-                                    <a href=" " class="btn btn-info">
+                                  
+                                    <a href="{{ route('consultations.edit', $consultation->id_consultation) }} " class="btn btn-info">
                                         Modifier
                                     </a>
-                                    <a href=" " class="btn btn-danger btn-delete">
-                                      Supprimer
-                                    </a>
+                                    @if ($consultations->count() == $key+1 and \Carbon\Carbon::parse($consultation->date_consultation)->diffInDays(now())<=1)
+                                    <a href="{{ route('consultations.destroy', $consultation->id_consultation) }} " class="btn btn-danger btn-delete">
+                                        Supprimer
+                                      </a>
+                                    @endif
+                                    
                             </tr>
                             @endforeach
 
