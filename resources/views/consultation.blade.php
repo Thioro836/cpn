@@ -18,7 +18,7 @@
 </div>
 
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-8">
         <div class="card-box">
             <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2">
                 Nouvelle consultation
@@ -48,11 +48,11 @@
                                 <td class="text-right">{{ $consultation->tension_arterielle}}</td>
                                 <td class="text-right">
 
-                                    <a href="{{ route('consultations.edit', $consultation->id_consultation) }} " class="btn btn-info">
+                                    <a href="{{ route('consultations.edit', $consultation->id_consultation) }} " class="btn btn-info btn-sm btn-block">
                                         Modifier
                                     </a>
                                     @if ($consultations->count() == $key+1 and \Carbon\Carbon::parse($consultation->date_consultation)->diffInDays(now())<=1)
-                                    <a href="{{ route('consultations.destroy', $consultation->id_consultation) }} " class="btn btn-danger btn-delete">
+                                    <a href="{{ route('consultations.destroy', $consultation->id_consultation) }} " class="btn btn-danger btn-delete btn-sm btn-block">
                                         Supprimer
                                       </a>
                                     @endif
@@ -64,6 +64,26 @@
             </div>
         </div>
     </div>
+    <div class="col-md-4">
+        @include('formulaires.antecedentPatient.create')
+    </div>
 
 </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $("select[name=categorie]").change(function() {
+                $.get('/dossier-antecedents/'+this.value,function(data){
+                    $(".champ").empty();
+                    for (var i=0;i<data.length;i++){
+                        var clone=$("#model .form-group").clone();
+                        clone.find("label").text(data[i].nom);
+                        clone.find("input").attr('name', 'dossier_antecedents['+data[i].id_antecedent+']');
+                        $(".champ").append(clone);
+                    }
+                });
+            });
+        });
+    </script>
 @endsection

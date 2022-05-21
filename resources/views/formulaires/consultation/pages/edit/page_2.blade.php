@@ -12,7 +12,7 @@
     @foreach (page_2() as $name => $question )
         <div class="col-md-6">
             <div class="checkbox checkbox-success form-check-inline ml-1 mb-2">
-                <input name="{{ $name }}" type="checkbox" id="{{ $name }}" >
+                <input {{ $consultation->getAttribute($name) ? "checked":"" }} name="{{ $name }}" type="checkbox" id="{{ $name }}" >
                 <label for="{{ $name }}"> {{ $question }} </label>
             </div>
         </div>

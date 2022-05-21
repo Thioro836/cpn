@@ -25,3 +25,5 @@ Route::resource('produit', 'App\Http\Controllers\ProduitsController');
 Route::resource('patients', 'App\Http\Controllers\PatientController');
 Route::resource('dossiers', 'App\Http\Controllers\DossierController');
 Route::resource('consultations', 'App\Http\Controllers\ConsultationController');
+Route::resource('antecedents', 'App\Http\Controllers\AntecedentController');
+Route::resource('dossier-antecedents', 'App\Http\Controllers\DossierAntecedentController');
