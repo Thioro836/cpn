@@ -16,8 +16,10 @@ class ConsultationController extends Controller
         $dossier=DossierPatient::find($request->dossier);
         return view ('consultation',[
             'dossier'=>$dossier,
-            'consultations'=>$dossier->consultations()->get()
+            'consultations'=>$dossier->consultations()->get(),
+            'categories' =>CategorieAntecedent::get()
         ]);
+
     }
 
     /**
@@ -113,7 +115,6 @@ class ConsultationController extends Controller
         $consultation= Consultation::find($id);
 
         $consultation->update([
-            'date_consultation'=>now(),
             'age_gestationnel' => $request->age_gestationnel,
             'mouvement_percus' => $request->has('mouvement_percus'),
             'poids' => $request->poids,

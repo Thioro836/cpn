@@ -591,6 +591,13 @@
                                 </a>
                             </li>
                             <li>
+                                <a href="{{ route('antecedents.index') }}">
+                                    
+                                    <span> Antecedent </span>
+                                </a>
+                            </li>
+                            
+                            <li>
                                 <a href="{{ route('gestations.index') }}">
                                     
                                     <span> Gestation </span>
@@ -1092,6 +1099,7 @@
         <!-- App js -->
         <script src="{{ asset('assets/js/app.min.js') }}"></script>
         <script src="{{ asset('assets/libs/jconfirm/jquery-confirm.min.js') }}"></script>
+        @yield('script')
         <script>
             $(document).ready(function() {
                 $.ajaxSetup({
