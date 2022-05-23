@@ -16,7 +16,8 @@ class CategorieAntecedentController extends Controller
     public function index()
     {
         return view('categorie_antecedent',[
-            'listeCategories'=> CategorieAntecedent::get()
+            'listeCategories'=> CategorieAntecedent::get(),
+            'form' => 'formulaires.antecedent.categorie.create',
         ]);
     }
 
@@ -27,7 +28,7 @@ class CategorieAntecedentController extends Controller
      */
     public function create()
     {
-        return view('formulaires.antecedent.categorie.create');
+        
     }
 
     /**
@@ -64,7 +65,9 @@ class CategorieAntecedentController extends Controller
     public function edit($id)
     {
         $categorie = CategorieAntecedent::find($id);
-        return view('formulaires.antecedent.categorie.edit', [
+        return view('categorie_antecedent', [
+            'form' => 'formulaires.antecedent.categorie.edit',
+            'listeCategories'=> CategorieAntecedent::get(),
             'categorie' => $categorie
         ]);
 

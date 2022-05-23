@@ -67,6 +67,7 @@ class ProduitsController extends Controller
         $produit=Produit::find($id);
         return view('produits',[
             'form' => 'formulaires.product.edit',
+            'listeproduits'=>Produit::get(),
             'produit'=>$produit
         ]);
     }

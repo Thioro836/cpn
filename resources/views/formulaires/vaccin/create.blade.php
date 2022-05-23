@@ -1,7 +1,6 @@
-@extends('layouts.master')
-@section('content')
-    <div class="row">
-        <div class="col-md-6">
+
+
+
             <div class="card-box">
                 @include('layouts.message')
                 <form action="{{ route('vaccins.store') }}" method="post">
@@ -15,6 +14,3 @@
                     <button class="btn btn-success " type="submit">Enregistrer</button>
                 </form>
             </div>
-        </div>
-    </div>
-@endsection

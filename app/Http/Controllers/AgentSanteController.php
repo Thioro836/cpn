@@ -15,6 +15,7 @@ class AgentSanteController extends Controller
     public function index()
     {
         return view('agent_sante',[
+            'form' => 'formulaires.agent.create',
             'listeAgent'=>AgentSante::get()/*recuperer les info dans la bd*/
         ]);
     }
@@ -70,8 +71,10 @@ class AgentSanteController extends Controller
     public function edit($id)
     {
        $agent = AgentSante::find($id); //recuperer l'id de la ligne
-       return view('formulaires.agent.edit',[
-           'agent'=>$agent //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
+       return view('agent_sante',[
+        'form' => 'formulaires.agent.edit',
+        'listeAgent'=>AgentSante::get(),
+        'agent'=>$agent //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
        ]);
     }
 

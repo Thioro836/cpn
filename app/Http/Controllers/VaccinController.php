@@ -15,7 +15,9 @@ class VaccinController extends Controller
     public function index()
     {
         return view('vaccin',[
-            'vaccins'=> Vaccin::get()
+            'vaccins'=> Vaccin::get(),
+            'form' => 'formulaires.vaccin.create',
+
         ]);
     }
 
@@ -26,7 +28,7 @@ class VaccinController extends Controller
      */
     public function create()
     {
-        return view('formulaires.vaccin.create');
+     
     }
 
     /**
@@ -64,8 +66,10 @@ class VaccinController extends Controller
     public function edit($id)
     {
         $vaccin=Vaccin::find($id);
-        return view('formulaires.vaccin.edit',[
-            'vaccin'=>$vaccin
+        return view('vaccin',[
+            'vaccin'=>$vaccin,
+            'vaccins'=> Vaccin::get(),
+            'form' => 'formulaires.vaccin.edit'
         ]);
     }
 

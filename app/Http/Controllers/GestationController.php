@@ -68,6 +68,7 @@ class GestationController extends Controller
         $gestation=Gestation::find($id);
         return view('gestation',[
             'form' => 'formulaires.gestation.edit',
+            'gestations' => Gestation::get(),
             'gestation'=>$gestation
         ]);
     }
