@@ -16,8 +16,15 @@
         </div>
     </div>
 </div>
-
 <div class="row">
+    @foreach ($categories as $categorie)
+        <div class="col-md-6">
+            @include('formulaires.antecedentPatient.antecedant', ['categorie' => $categorie])
+        </div>
+    @endforeach
+</div>
+<div class="row">
+
     <div class="col-md-8">
         <div class="card-box">
             <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2">
@@ -41,7 +48,7 @@
                             @foreach ( $consultations as $key=> $consultation )
                             <tr>
                                 <th scope="row">{{ $key+1 }}</th>
-                                <td>{{ $consultation->date_consultation }}</td>
+                                <td>{{ dateFormat($consultation->date_consultation) }}</td>
                                 <td class="text-right">{{ $consultation->age_gestationnel }} mois</td>
                                 <td class="text-right">{{ $consultation->poids }} Kg</td>
                                 <td class="text-right">{{ $consultation->haut_uterine}} cm</td>
@@ -71,19 +78,26 @@
 </div>
 @endsection
 @section('script')
+
     <script>
-        $(document).ready(function() {
-            $("select[name=categorie]").change(function() {
-                $.get('/dossier-antecedents/'+this.value,function(data){
-                    $(".champ").empty();
-                    for (var i=0;i<data.length;i++){
-                        var clone=$("#model .form-group").clone();
-                        clone.find("label").text(data[i].nom);
-                        clone.find("input").attr('name', 'dossier_antecedents['+data[i].id_antecedent+']');
-                        $(".champ").append(clone);
-                    }
-                });
+        function getAntecedants(id) {
+            $.get('/dossier-antecedents/'+id, function(data){
+                $(".champ").empty();
+                for (var i=0;i<data.length;i++){
+                    var clone=$("#model .form-group").clone();
+                    clone.find("label").text(data[i].nom+":");
+                    clone.find("input").attr('name', 'antecedents['+data[i].id_antecedent+']');
+                    $(".champ").append(clone);
+                }
             });
+        }
+        $(document).ready(function() {
+
+            $("select[name=categorie]").change(function() {
+                getAntecedants(this.value);
+            });
+
+            getAntecedants($("select[name=categorie] option:selected").val());
         });
     </script>
 @endsection

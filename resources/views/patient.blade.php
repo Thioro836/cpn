@@ -19,7 +19,7 @@
 <a href="{{ route('patients.create') }}" class="btn btn-primary mt-3">
     Ajouter une patiente
 </a>
-<div class="card-box mt-5">
+<div class="card-box mt-2">
     <h4 class="header-title">Liste des patientes</h4>
     <p class="sub-header">
         For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.
@@ -35,7 +35,7 @@
                <th>Adresse</th>
                <th>Telephone</th>
                <th class="text-right">Actions</th>
-               
+
             </tr>
             </thead>
             <tbody>
@@ -47,7 +47,7 @@
                     <td>{{ $patient->adresse_patient }}</td>
                     <td>{{ $patient->telephone_patient }}</td>
                     <td class="text-right">
-                        <a href="{{ route('dossiers.index', ['patient'=> $patient->id_patient]) }}"  class="btn btn-success">      
+                        <a href="{{ route('dossiers.index', ['patient'=> $patient->id_patient]) }}"  class="btn btn-success">
                             Dossiers
                             </a>
                         <a href="{{ route('patients.edit', $patient->id_patient) }}" class="btn btn-info">

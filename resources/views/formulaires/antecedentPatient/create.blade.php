@@ -1,7 +1,8 @@
 
 <div class="card-box">
-    <form action="{{ route('antecedents.store') }}" method="POST">
-        @csrf 
+    <form action="{{ route('dossier-antecedents.store') }}" method="POST">
+        @csrf
+        <input type="hidden" value="{{ $dossier->id_dossier }}" name="dossier">
         @include('layouts.message')
         <div class="form-group">
             <label >Catégorie de l'antecedent </label>
@@ -14,7 +15,7 @@
             </select>
         </div>
        <div class="champ"></div>
-    
+
 
         <button class="btn btn-success " type="submit">enregistrer</button>
     </form>

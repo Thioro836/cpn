@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{CategorieAntecedent};
+use App\Models\{CategorieAntecedent, DossierPatientAntecedent};
 
 class DossierAntecedentController extends Controller
 {
@@ -35,7 +35,16 @@ class DossierAntecedentController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        foreach ($request->antecedents as $antecedent => $valeur) {
+            if($valeur) {
+                DossierPatientAntecedent::firstOrCreate([
+                    'id_antecedent' => $antecedent,
+                    'id_dossier' => $request->dossier
+                ])->update(['valeur_antecedent' => $valeur]);
+            }
+        }
+
+        return back()->with('message', "Antecedents mis à jour avec succès");
     }
 
     /**
