@@ -6,7 +6,7 @@
 
 <div class="table-responsive">
     <table class="table mb-0">
-        
+
         <thead>
         <tr>
             <th>#</th>
@@ -32,3 +32,4 @@
         </tbody>
     </table>
     </div>
+</div>
