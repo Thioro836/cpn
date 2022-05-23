@@ -19,9 +19,7 @@
 
 <div class="row">
     <div class="col-md-8">
-        <div class="card-box">
-            @include('formulaires.gestation.table')
-        </div>
+        @include('formulaires.gestation.table')
     </div>
     <div class="col-md-4">
         @include($form)

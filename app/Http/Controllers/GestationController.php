@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Http\Requests\GestationRequest; 
+use App\Http\Requests\GestationRequest;
 
 use Illuminate\Http\Request;
 use App\Models\{Gestation};
@@ -29,7 +29,7 @@ class GestationController extends Controller
      */
     public function create()
     {
-       
+
     }
 
     /**
@@ -85,7 +85,7 @@ class GestationController extends Controller
         $gestation->update([
             'nom_gestation' =>$request->nom
         ]);
-      
+
         return redirect('/gestations')->with('message',"enregistrement reussi");
     }
 

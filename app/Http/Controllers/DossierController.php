@@ -28,7 +28,7 @@ class DossierController extends Controller
      */
     public function create()
     {
-    
+
     }
 
     /**
@@ -59,7 +59,7 @@ class DossierController extends Controller
         $liste ='0123456789ABCD';
         $resultat = "";
         for($i=1;$i<=4;$i++){
-            $resultat .=substr($liste,(rand()%(strlen($liste))),1); 
+            $resultat .=substr($liste,(rand()%(strlen($liste))),1);
         }
         return $resultat;
     }
