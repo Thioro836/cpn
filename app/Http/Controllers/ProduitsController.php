@@ -15,7 +15,8 @@ class ProduitsController extends Controller
     public function index()
     {
       return view('produits',[
-        'listeproduits'=>Produit::get()/*recuperer les info dans la bd*/
+        'listeproduits'=>Produit::get(),/*recuperer les info dans la bd*/
+        'form' => 'formulaires.product.create',
     ]);
 
     }
@@ -26,7 +27,7 @@ class ProduitsController extends Controller
      */
     public function create()
     {
-        return view('formulaires.product.create');
+      
     }
 
 
@@ -64,7 +65,8 @@ class ProduitsController extends Controller
     public function edit($id)
     {
         $produit=Produit::find($id);
-        return view('formulaires.product.edit',[
+        return view('produits',[
+            'form' => 'formulaires.product.edit',
             'produit'=>$produit
         ]);
     }
