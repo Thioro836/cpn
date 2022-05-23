@@ -17,6 +17,7 @@ class GestationController extends Controller
     public function index()
     {
         return view('gestation',[
+            'form' => 'formulaires.gestation.create',
             'gestations'=> Gestation::get()
         ]);
     }
@@ -28,7 +29,7 @@ class GestationController extends Controller
      */
     public function create()
     {
-        return view('formulaires.gestation.create');
+       
     }
 
     /**
@@ -65,7 +66,8 @@ class GestationController extends Controller
     public function edit($id)
     {
         $gestation=Gestation::find($id);
-        return view('formulaires.gestation.edit',[
+        return view('gestation',[
+            'form' => 'formulaires.gestation.edit',
             'gestation'=>$gestation
         ]);
     }
@@ -83,7 +85,8 @@ class GestationController extends Controller
         $gestation->update([
             'nom_gestation' =>$request->nom
         ]);
-        return redirect('gestations');
+      
+        return redirect('/gestations')->with('message',"enregistrement reussi");
     }
 
     /**
