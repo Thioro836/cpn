@@ -1,7 +1,5 @@
-@extends('layouts.master')
-@section('content')
-    <div class="row">
-        <div class="col-md-6">
+
+
             <div class="card-box">
                 @if (\Session::has('message'))
                 <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
@@ -18,6 +16,4 @@
                     <button class="btn btn-success " type="submit">Enregistrer</button>
                 </form>
             </div>
-        </div>
-    </div>
-@endsection
+    

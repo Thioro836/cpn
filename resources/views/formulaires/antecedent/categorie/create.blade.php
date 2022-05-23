@@ -1,8 +1,4 @@
-@extends('layouts.master')
-@section('content')
-  
-<div class="row">
-    <div class="col-md-6" >
+
         <div class="card-box">
             @include('layouts.message')
             <form action="{{ route('categorie-antecedent.store') }}" method="POST">
@@ -14,7 +10,5 @@
             <button class="btn btn-success " type="submit">enregistrer</button>
             </form>
         </div>
-    </div>
-</div>
+
     
-@endsection
