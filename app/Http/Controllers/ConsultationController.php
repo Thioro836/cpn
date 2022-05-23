@@ -14,12 +14,12 @@ class ConsultationController extends Controller
     public function index(Request $request)
     {
         $dossier=DossierPatient::find($request->dossier);
+
         return view ('consultation',[
             'dossier'=>$dossier,
             'consultations'=>$dossier->consultations()->get(),
-            'categories' =>CategorieAntecedent::get()
+            'categories' =>CategorieAntecedent::get(),
         ]);
-
     }
 
     /**

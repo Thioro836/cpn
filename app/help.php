@@ -1,10 +1,13 @@
 <?php
+use Carbon\Carbon;
+use Illuminate\Support\Arr;
+
 function page_1(){
     return [
         'mouvement_percus' => "Mouvement perçus ?",
         'bruit_coeur' => "Bruit du coeur ?",
         'conseling' => "Conseling ?"
-        
+
     ];
 }
 function page_2(){
@@ -30,8 +33,39 @@ function page_3(){
         'position_transverse' => "Position transverse",
         'siege' => "Siege",
         'gemellaire' => "Gemellaire"
-
-
     ];
 }
+
+function dateFormat($date, $type = 'table'){
+	if (empty($date)) {
+		return "";
+	}
+ 	switch ($type) {
+ 		case 'table':
+ 			return Carbon::parse($date)->locale('fr_FR')->isoFormat('LL');
+ 			break;
+ 		case 'mysql':
+ 			return Carbon::createFromFormat('d/m/Y', $date)->format('Y-m-d');
+ 			break;
+ 		case 'mysql_time':
+ 			return Carbon::createFromFormat('d/m/Y H:i', $date)->format('Y-m-d H:i');
+ 			break;
+ 		case 'form':
+ 			return Carbon::parse($date)->format('d/m/Y');
+ 			break;
+ 		case 'isoFormat':
+ 			if (empty($date)) {
+ 				return trans("Jamais");
+ 			}
+ 			return Carbon::parse($date)->locale('fr_FR')->isoFormat('LLLL');
+ 			break;
+ 		case 'human':
+ 			return Carbon::parse($date)->diffForHumans();
+ 			break;
+ 		default:
+ 			return "";
+ 			break;
+ 	}
+}
+
 ?>
