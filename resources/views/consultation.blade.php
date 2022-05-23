@@ -48,7 +48,7 @@
                             @foreach ( $consultations as $key=> $consultation )
                             <tr>
                                 <th scope="row">{{ $key+1 }}</th>
-                                <td>{{ $consultation->date_consultation }}</td>
+                                <td>{{ dateFormat($consultation->date_consultation) }}</td>
                                 <td class="text-right">{{ $consultation->age_gestationnel }} mois</td>
                                 <td class="text-right">{{ $consultation->poids }} Kg</td>
                                 <td class="text-right">{{ $consultation->haut_uterine}} cm</td>
