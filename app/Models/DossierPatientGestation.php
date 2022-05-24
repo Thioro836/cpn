@@ -53,4 +53,12 @@ class DossierPatientGestation extends Model
 	{
 		return $this->belongsTo(Gestation::class, 'id_gestation');
 	}
+
+    protected function setKeysForSaveQuery($query)
+    {
+        $query
+            ->where('id_gestation', '=', $this->getAttribute('id_gestation'))
+            ->where('id_dossier', '=', $this->getAttribute('id_dossier'));
+        return $query;
+    }
 }
