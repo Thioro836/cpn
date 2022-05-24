@@ -16,16 +16,10 @@
         </div>
     </div>
 </div>
-<div class="row">
-    @foreach ($categories as $categorie)
-        <div class="col-md-6">
-            @include('formulaires.antecedentPatient.antecedant', ['categorie' => $categorie])
-        </div>
-    @endforeach
-</div>
+
 <div class="row">
 
-    <div class="col-md-8">
+    <div class="col-md-12">
         <div class="card-box">
             <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2">
                 Nouvelle consultation
@@ -71,10 +65,21 @@
             </div>
         </div>
     </div>
+
+</div>
+<div class="row">
+    <div class="col-md-8">
+        <div class="row">
+            @foreach ($categories as $categorie)
+                <div class="col-md-6">
+                    @include('formulaires.antecedentPatient.antecedant', ['categorie' => $categorie])
+                </div>
+            @endforeach
+        </div>
+    </div>
     <div class="col-md-4">
         @include('formulaires.antecedentPatient.create')
     </div>
-
 </div>
 @endsection
 @section('script')
