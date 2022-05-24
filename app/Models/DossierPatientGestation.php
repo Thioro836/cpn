@@ -7,14 +7,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
 /**
  * Class DossierPatientGestation
- * 
+ *
  * @property int $id_gestation
  * @property int $id_dossier
  * @property string $valeur_gestation
- * 
+ *
  * @property DossierPatient $dossierPatient
  * @property Gestation $gestation
  *
@@ -27,13 +28,20 @@ class DossierPatientGestation extends Model
 	public $timestamps = false;
 	public static $snakeAttributes = false;
 
+    protected $primaryKey = [
+        'id_gestation',
+		'id_dossier'
+    ];
+
 	protected $casts = [
 		'id_gestation' => 'int',
 		'id_dossier' => 'int'
 	];
 
 	protected $fillable = [
-		'valeur_gestation'
+		'valeur_gestation',
+        'id_gestation',
+		'id_dossier'
 	];
 
 	public function dossierPatient()
