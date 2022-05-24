@@ -40,6 +40,11 @@
                                                 Enregistrement:
                                                 {{ dateFormat($dossier->date_enregistrement) }}
                                             </p>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <a href="{{ route('gestation-patient.index',['dossier'=> $dossier->id_dossier]) }} " class="btn btn-primary btn-xs">Gestation antérieure</a>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div> <!-- end row -->
                                 </div> <!-- end .p-2-->

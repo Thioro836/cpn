@@ -11,7 +11,7 @@
         @endphp
         <div class="row">
             @foreach ($antecedents as $antecedent)
-                <div class="col-md-4">
+                <div class="col-md-12">
                     <h4>{{ $antecedent->nom }}: {{ $antecedent->pivot->valeur_antecedent }}</h4>
                 </div>
             @endforeach

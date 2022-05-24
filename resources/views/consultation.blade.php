@@ -102,7 +102,8 @@
                 getAntecedants(this.value);
             });
 
-            getAntecedants($("select[name=categorie] option:selected").val());
+            var id=$("select[name=categorie] option:selected").val();
+            getAntecedants(id);
         });
     </script>
 @endsection
