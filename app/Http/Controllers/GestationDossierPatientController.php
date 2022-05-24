@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{ GestationDossierPatient,DossierPatient,Gestation};
+use App\Models\{ DossierPatientGestation,DossierPatient,Gestation};
 
 class GestationDossierPatientController extends Controller
 {
@@ -42,7 +42,14 @@ class GestationDossierPatientController extends Controller
      */
     public function store(Request $request)
     {
-        
+        foreach ($request->gestations as $key => $value) {
+            $gest= DossierPatientGestation::firstOrCreate([
+                'id_gestation' =>$key,
+                'id_dossier' => $request->dossier
+            ]);
+            $gest->update(['valeur_gestation'=>$value]);
+        }
+        return back()->with('message',"enregistrement reussi");
     }
 
     /**
