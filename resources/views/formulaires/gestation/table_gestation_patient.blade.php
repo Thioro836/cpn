@@ -12,24 +12,15 @@
             <th>#</th>
             <th>Nom</th>
             <th>Valeur</th>
-            <th class="text-right">Actions</th>
         </tr>
         </thead>
         <tbody>
            @foreach ($listeGestations as $key => $gestation)
            <tr>
-            <th scope="row">{{ $key+1 }}</th>
-            <td>{{ $gestation->nom_gestation }}</td>
-            <td>{{ $gestation->pivot->valeur_gestation }}</td>
-            <td class="text-right">
-                <a href="{{ route('gestations.edit', $gestation->id_gestation) }}" class="btn btn-primary mt-3">
-                    modifier
-                </a>
-                <a href="{{ route('gestations.destroy', $gestation->id_gestation) }}" class="btn btn-delete btn-danger mt-3">
-                    supprimer
-                </a>
-            </td>
-        </tr>
+                <th scope="row">{{ $key+1 }}</th>
+                <td>{{ $gestation->nom_gestation }}</td>
+                <td>{{ $gestation->pivot->valeur_gestation }}</td>
+            </tr>
            @endforeach
         </tbody>
     </table>
