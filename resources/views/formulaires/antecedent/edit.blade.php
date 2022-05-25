@@ -1,7 +1,8 @@
 
 <div class="card-box">
+    <h4 class="text-center">Modifier un antecedent</h4>
     <form action="{{ route('antecedents.update', $antecedent->id_antecedent) }}" method="POST">
-        @csrf 
+        @csrf
         @method('PUT')
         @include('layouts.message')
         <div class="form-group">

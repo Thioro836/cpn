@@ -1,10 +1,7 @@
-<div class="card-box mt-5">
-    <h4 class="header-title">Liste des Catégories d'antécedent</h4>
-    <p class="sub-header">
-        You can also invert the colors—with light text on dark backgrounds—with <code class="highlighter-rouge">.table-dark</code>.
-    </p>
+<div class="card-box mt-1">
+    <h4 class="header-title mb-2">Liste des Catégories d'antécedent</h4>
 
-    <div class="table-responsive">
+    <div class="table-responsive table-bordered">
         <table class="table mb-0">
             <thead>
             <tr>
@@ -26,12 +23,12 @@
                             Supprimer
                         </a>
                     </td>
-            
+
                 </tr>
-                
+
             @endforeach
 
             </tbody>
         </table>
     </div>
-</div> 
+</div>

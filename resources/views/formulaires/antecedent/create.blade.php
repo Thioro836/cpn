@@ -1,7 +1,8 @@
 
 <div class="card-box">
+    <h4 class="text-center">Enregistrer un antecedent</h4>
     <form action="{{ route('antecedents.store') }}" method="POST">
-        @csrf 
+        @csrf
         @include('layouts.message')
         <div class="form-group">
             <label >Catégorie de l'antecedent </label>

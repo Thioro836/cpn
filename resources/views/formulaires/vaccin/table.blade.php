@@ -1,10 +1,7 @@
-<div class="card-box mt-5">
+<div class="card-box mt-1">
     <h4 class="header-title">Liste des vaccins</h4>
-    <p class="sub-header">
-        For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.
-    </p>
 
-    <div class="table-responsive">
+    <div class="table-responsive table-bordered">
         <table class="table mb-0">
             <thead>
             <tr>
@@ -30,8 +27,8 @@
                 </td>
             </tr>
                @endforeach
-               
-          
+
+
             </tbody>
         </table>
     </div>

@@ -10,11 +10,11 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ConsultationProduit
- * 
+ *
  * @property int $id_produit
  * @property int $id_consultation
  * @property int $quantite
- * 
+ *
  * @property Consultation $consultation
  * @property Produit $produit
  *
@@ -27,6 +27,11 @@ class ConsultationProduit extends Model
 	public $timestamps = false;
 	public static $snakeAttributes = false;
 
+    protected $primaryKey = [
+        'id_produit',
+		'id_consultation',
+    ];
+
 	protected $casts = [
 		'id_produit' => 'int',
 		'id_consultation' => 'int',
@@ -34,6 +39,8 @@ class ConsultationProduit extends Model
 	];
 
 	protected $fillable = [
+        'id_produit',
+		'id_consultation',
 		'quantite'
 	];
 
@@ -46,4 +53,12 @@ class ConsultationProduit extends Model
 	{
 		return $this->belongsTo(Produit::class, 'id_produit');
 	}
+
+    protected function setKeysForSaveQuery($query)
+    {
+        $query
+            ->where('id_produit', '=', $this->getAttribute('id_produit'))
+            ->where('id_consultation', '=', $this->getAttribute('id_consultation'));
+        return $query;
+    }
 }

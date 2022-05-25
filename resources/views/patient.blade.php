@@ -16,16 +16,15 @@
         </div>
     </div>
 </div>
-<a href="{{ route('patients.create') }}" class="btn btn-primary mt-3">
-    Ajouter une patiente
-</a>
-<div class="card-box mt-2">
-    <h4 class="header-title">Liste des patientes</h4>
-    <p class="sub-header">
-        For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.
-    </p>
 
-    <div class="table-responsive">
+<div class="card-box mt-2">
+    <h4 class="header-title mb-1">Liste des patientes</h4>
+
+    <a href="{{ route('patients.create') }}" class="btn btn-primary mb-2 float-right">
+        Ajouter une patiente
+    </a>
+
+    <div class="table-responsive table-bordered">
         <table class="table mb-0">
             <thead>
             <tr>

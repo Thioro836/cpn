@@ -13,13 +13,13 @@ class ProduitConsultController extends Controller
      */
     public function index(Request $request)
     {
-        $consultation= Consultation::find($request->consultation);
-      return view('produit_const_patient',[
+        $consultation = Consultation::find($request->consultation);
+
+        return view('produit_const_patient',[
             'form' =>'formulaires.product.produit_const_create',
             'consultation' =>$consultation,
             'produits'=> Produit::get(),
-            'listeProduits' =>$consultation->produits()->get()
-
+            'listeProduits' => $consultation->produits()->get()
         ]);
     }
 

@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8" />
-        <title>Calendar | UBold - Responsive Admin Dashboard Template</title>
+        <title>CPN</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="A fully featured admin theme which can be used to build CRM, CMS, etc." name="description" />
         <meta content="Coderthemes" name="author" />
@@ -11,7 +11,7 @@
         <!-- App favicon -->
         <link rel="shortcut icon" href="../assets/images/favicon.ico">
 
-        
+        <link href="{{ asset('assets/libs/fullcalendar/main.min.css') }}" rel="stylesheet" type="text/css" />
 
         <!-- App css -->
         <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" id="bs-default-stylesheet" />
@@ -51,19 +51,19 @@
                                         <div class="dropdown-header noti-title">
                                             <h5 class="text-overflow mb-2">Found 22 results</h5>
                                         </div>
-            
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="fe-home mr-1"></i>
                                             <span>Analytics Report</span>
                                         </a>
-            
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="fe-aperture mr-1"></i>
                                             <span>How can I help you?</span>
                                         </a>
-                            
+
                                         <!-- item-->
                                         <a href="javascript:void(0);" class="dropdown-item notify-item">
                                             <i class="fe-settings mr-1"></i>
@@ -98,12 +98,12 @@
                                                 </div>
                                             </a>
                                         </div>
-            
-                                    </div>  
+
+                                    </div>
                                 </div>
                             </form>
                         </li>
-    
+
                         <li class="dropdown d-inline-block d-lg-none">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-search noti-icon"></i>
@@ -114,19 +114,19 @@
                                 </form>
                             </div>
                         </li>
-    
+
                         <li class="dropdown d-none d-lg-inline-block">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="fullscreen" href="#">
                                 <i class="fe-maximize noti-icon"></i>
                             </a>
                         </li>
-    
+
                         <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-grid noti-icon"></i>
                             </a>
                             <div class="dropdown-menu dropdown-lg dropdown-menu-right">
-    
+
                                 <div class="p-lg-1">
                                     <div class="row no-gutters">
                                         <div class="col">
@@ -148,7 +148,7 @@
                                             </a>
                                         </div>
                                     </div>
-    
+
                                     <div class="row no-gutters">
                                         <div class="col">
                                             <a class="dropdown-icon-item" href="#">
@@ -168,49 +168,49 @@
                                                 <span>G Suite</span>
                                             </a>
                                         </div>
-                            
+
                                     </div>
                                 </div>
-    
+
                             </div>
                         </li>
-    
+
                         <li class="dropdown d-none d-lg-inline-block topbar-dropdown">
                             <a class="nav-link dropdown-toggle arrow-none waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="../assets/images/flags/us.jpg" alt="user-image" height="16">
                             </a>
                             <div class="dropdown-menu dropdown-menu-right">
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <img src="../assets/images/flags/germany.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">German</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <img src="../assets/images/flags/italy.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Italian</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <img src="../assets/images/flags/spain.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Spanish</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <img src="../assets/images/flags/russia.jpg" alt="user-image" class="mr-1" height="12"> <span class="align-middle">Russian</span>
                                 </a>
-    
+
                             </div>
                         </li>
-            
+
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <i class="fe-bell noti-icon"></i>
                                 <span class="badge badge-danger rounded-circle noti-icon-badge">9</span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right dropdown-lg">
-    
+
                                 <!-- item-->
                                 <div class="dropdown-item noti-title">
                                     <h5 class="m-0">
@@ -221,9 +221,9 @@
                                         </span>Notification
                                     </h5>
                                 </div>
-    
+
                                 <div class="noti-scroll" data-simplebar>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item active">
                                         <div class="notify-icon">
@@ -233,7 +233,7 @@
                                             <small>Hi, How are you? What about our next meeting</small>
                                         </p>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon bg-primary">
@@ -243,7 +243,7 @@
                                             <small class="text-muted">1 min ago</small>
                                         </p>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon">
@@ -253,7 +253,7 @@
                                             <small>Wow ! this admin looks good and awesome design</small>
                                         </p>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon bg-warning">
@@ -263,7 +263,7 @@
                                             <small class="text-muted">5 hours ago</small>
                                         </p>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon bg-info">
@@ -273,7 +273,7 @@
                                             <small class="text-muted">4 days ago</small>
                                         </p>
                                     </a>
-    
+
                                     <!-- item-->
                                     <a href="javascript:void(0);" class="dropdown-item notify-item">
                                         <div class="notify-icon bg-secondary">
@@ -285,21 +285,21 @@
                                         </p>
                                     </a>
                                 </div>
-    
+
                                 <!-- All-->
                                 <a href="javascript:void(0);" class="dropdown-item text-center text-primary notify-item notify-all">
                                     View all
                                     <i class="fe-arrow-right"></i>
                                 </a>
-    
+
                             </div>
                         </li>
-    
+
                         <li class="dropdown notification-list topbar-dropdown">
                             <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 <img src="../assets/images/users/user-1.jpg" alt="user-image" class="rounded-circle">
                                 <span class="pro-user-name ml-1">
-                                    Geneva <i class="mdi mdi-chevron-down"></i> 
+                                    Geneva <i class="mdi mdi-chevron-down"></i>
                                 </span>
                             </a>
                             <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
@@ -307,44 +307,44 @@
                                 <div class="dropdown-header noti-title">
                                     <h6 class="text-overflow m-0">Welcome !</h6>
                                 </div>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-user"></i>
                                     <span>My Account</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-settings"></i>
                                     <span>Settings</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-lock"></i>
                                     <span>Lock Screen</span>
                                 </a>
-    
+
                                 <div class="dropdown-divider"></div>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item notify-item">
                                     <i class="fe-log-out"></i>
                                     <span>Logout</span>
                                 </a>
-    
+
                             </div>
                         </li>
-    
+
                         <li class="dropdown notification-list">
                             <a href="javascript:void(0);" class="nav-link right-bar-toggle waves-effect waves-light">
                                 <i class="fe-settings noti-icon"></i>
                             </a>
                         </li>
-    
+
                     </ul>
-    
+
                     <!-- LOGO -->
                     <div class="logo-box">
                         <a href="index.html" class="logo logo-dark text-center">
@@ -357,7 +357,7 @@
                                 <!-- <span class="logo-lg-text-light">U</span> -->
                             </span>
                         </a>
-    
+
                         <a href="index.html" class="logo logo-light text-center">
                             <span class="logo-sm">
                                 <img src="../assets/images/logo-sm.png" alt="" height="22">
@@ -367,7 +367,7 @@
                             </span>
                         </a>
                     </div>
-    
+
                     <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
                         <li>
                             <button class="button-menu-mobile waves-effect waves-light">
@@ -385,12 +385,12 @@
                                 </div>
                             </a>
                             <!-- End mobile menu toggle-->
-                        </li>   
-            
+                        </li>
+
                         <li class="dropdown d-none d-xl-block">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 Create New
-                                <i class="mdi mdi-chevron-down"></i> 
+                                <i class="mdi mdi-chevron-down"></i>
                             </a>
                             <div class="dropdown-menu">
                                 <!-- item-->
@@ -398,45 +398,45 @@
                                     <i class="fe-briefcase mr-1"></i>
                                     <span>New Projects</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="fe-user mr-1"></i>
                                     <span>Create Users</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="fe-bar-chart-line- mr-1"></i>
                                     <span>Revenue Report</span>
                                 </a>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="fe-settings mr-1"></i>
                                     <span>Settings</span>
                                 </a>
-    
+
                                 <div class="dropdown-divider"></div>
-    
+
                                 <!-- item-->
                                 <a href="javascript:void(0);" class="dropdown-item">
                                     <i class="fe-headphones mr-1"></i>
                                     <span>Help & Support</span>
                                 </a>
-    
+
                             </div>
                         </li>
-    
+
                         <li class="dropdown dropdown-mega d-none d-xl-block">
                             <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
                                 Mega Menu
-                                <i class="mdi mdi-chevron-down"></i> 
+                                <i class="mdi mdi-chevron-down"></i>
                             </a>
                             <div class="dropdown-menu dropdown-megamenu">
                                 <div class="row">
                                     <div class="col-sm-8">
-                            
+
                                         <div class="row">
                                             <div class="col-md-4">
                                                 <h5 class="text-dark mt-0">UI Components</h5>
@@ -464,7 +464,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-    
+
                                             <div class="col-md-4">
                                                 <h5 class="text-dark mt-0">Applications</h5>
                                                 <ul class="list-unstyled megamenu-list">
@@ -491,7 +491,7 @@
                                                     </li>
                                                 </ul>
                                             </div>
-    
+
                                             <div class="col-md-4">
                                                 <h5 class="text-dark mt-0">Extra Pages</h5>
                                                 <ul class="list-unstyled megamenu-list">
@@ -528,7 +528,7 @@
                                         </div>
                                     </div>
                                 </div>
-    
+
                             </div>
                         </li>
                     </ul>
@@ -586,44 +586,44 @@
                         <ul id="side-menu">
                             <li>
                                 <a href="{{ route('categorie-antecedent.index') }}">
-                                    
+
                                     <span> Categorie antecedent </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('antecedents.index') }}">
-                                    
+
                                     <span> Antecedent </span>
                                 </a>
                             </li>
-                            
+
                             <li>
                                 <a href="{{ route('gestations.index') }}">
-                                    
+
                                     <span> Gestation </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('vaccins.index') }}">
-                                    
+
                                     <span> Vaccin </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('agent-sante.index') }}">
-                                    
+
                                     <span> Agent santé </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('produit.index') }}">
-                                    
+
                                     <span> Produit </span>
                                 </a>
                             </li>
                             <li>
                                 <a href="{{ route('patients.index') }}">
-                                    
+
                                     <span> Patient </span>
                                 </a>
                             </li>
@@ -664,7 +664,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                2015 - <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a> 
+                                2015 - <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a>
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-sm-block">
@@ -691,7 +691,7 @@
         <!-- Right Sidebar -->
         <div class="right-bar">
             <div data-simplebar class="h-100">
-    
+
                 <!-- Nav tabs -->
                 <ul class="nav nav-tabs nav-bordered nav-justified" role="tablist">
                     <li class="nav-item">
@@ -714,7 +714,7 @@
                 <!-- Tab panes -->
                 <div class="tab-content pt-0">
                     <div class="tab-pane" id="chat-tab" role="tabpanel">
-                
+
                         <form class="search-bar p-3">
                             <div class="position-relative">
                                 <input type="text" class="form-control" placeholder="Search...">
@@ -1092,7 +1092,13 @@
 
          <!-- Plugins js-->
          <script src="{{ asset('assets/libs/twitter-bootstrap-wizard/jquery.bootstrap.wizard.min.js') }}"></script>
+         <script src="{{ asset('assets/libs/moment/min/moment.min.js') }}"></script>
+         <script src="{{ asset('assets/libs/fullcalendar/main.min.js') }}"></script>
 
+        <script src="{{ asset('assets/libs/fullcalendar/locales/fr.js') }}"></script>
+
+         <!-- Calendar init -->
+         <script src="{{ asset('assets/js/pages/calendar.init.js') }}"></script>
          <!-- Init js-->
          <script src="{{ asset('assets/js/pages/form-wizard.init.js') }}"></script>
 
@@ -1140,6 +1146,6 @@
                 });
             });
         </script>
-        
+
     </body>
 </html>

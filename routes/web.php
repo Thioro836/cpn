@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::get('/', 'App\Http\Controllers\HomeController@index');
 //Route::resource('categorie-ancetedent','App\Http\Controllers\CategorieAntecedentController');
 Route::resource('gestations','App\Http\Controllers\GestationController');
 Route::resource('vaccins','App\Http\Controllers\VaccinController');
