@@ -28,3 +28,4 @@ Route::resource('consultations', 'App\Http\Controllers\ConsultationController');
 Route::resource('antecedents', 'App\Http\Controllers\AntecedentController');
 Route::resource('dossier-antecedents', 'App\Http\Controllers\DossierAntecedentController');
 Route::resource('gestation-patient', 'App\Http\Controllers\GestationDossierPatientController');
+Route::resource('produit-consultation', 'App\Http\Controllers\ProduitConsultController');

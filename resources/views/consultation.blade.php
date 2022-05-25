@@ -24,6 +24,7 @@
             <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2">
                 Nouvelle consultation
             </a>
+           
             <div class="row">
                 <table class="table mb-0">
                     <thead>
@@ -57,6 +58,9 @@
                                         Supprimer
                                       </a>
                                     @endif
+                                    <a href="{{ route('produit-consultation.index',['consultation'=>$consultation->id_consultation]) }}" class="btn btn-primary mt-3 mb-2">
+                                        Produits delivrés
+                                       </a>
 
                             </tr>
                             @endforeach
