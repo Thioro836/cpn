@@ -85,6 +85,20 @@
         @include('formulaires.antecedentPatient.create')
     </div>
 </div>
+<hr>
+<div class="row">
+    <div class="col-md-8">
+        @include('formulaires.plan.plan')
+    </div>
+    <div class="col-md-4">
+        @if ($dossier->planAccouchement()->count())
+            @include('formulaires.plan.edit')
+        @else
+            @include('formulaires.plan.create')
+        @endif
+
+    </div>
+</div>
 @endsection
 @section('script')
 
