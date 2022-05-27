@@ -25,6 +25,6 @@
             <input class="form-control" type="text" name="accompagant">
         </div>
 
-        <button class="btn btn-success " type="submit">enregistrer</button>
+        <button class="btn btn-success " type="submit">Enregistrer</button>
     </form>
 </div>

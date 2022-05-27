@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">Modification</li>
                 </ol>
             </div>
-            <h4 class="page-title">Modification d'une consultation</h4>
+            <h4 class="page-title text-center font-weight-bold">Modification d'une consultation</h4>
         </div>
     </div>
 </div>

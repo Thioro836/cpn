@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">{{ $dossier->numero_dossier }}</li>
                 </ol>
             </div>
-            <h4 class="page-title">Gestion du dossier {{ $dossier->numero_dossier }}</h4>
+            <h4 class="page-title text-center font-weight-bold">Liste des consultations  {{ $dossier->numero_dossier }}</h4>
         </div>
     </div>
 </div>
