@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">{{ $patient->prenom_patient }}</li>
                 </ol>
             </div>
-            <h4 class="page-title">Gestion des dossiers de {{ $patient->prenom_patient }} </h4>
+            <h4 class="page-title text-center font-weight-bold">Liste  des dossiers de {{ $patient->prenom_patient }} </h4>
         </div>
     </div>
 </div>
