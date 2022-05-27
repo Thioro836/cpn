@@ -3,7 +3,7 @@
         <h2>PLAN D'ACOUCHEMENT</h2>
     </div>
     <div class="card-body">
-        @if($dossier->planAccouchement()->get())
+        @if($dossier->planAccouchement()->count())
             <div class="row">
                 <div class="col-md-6">
                     <h4>Lieu:
