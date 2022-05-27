@@ -1,14 +1,17 @@
 @extends('layouts.master')
 @section('content')
-<div class="row">
-    <div class="col-md-12" >
+
+<div class="row mt-2">
+    <h2 class="header-title text-center">Informations personnelles de la patiente</h2>
+    <div class="col-md-12 mt-4" >
         <div class="card-box">
            @include('layouts.message')
             <form action="{{ route('patients.store') }}" method="POST">
             @csrf 
+            <h3 class="header-title">Identification de la patiente </h3>
             <div class="row">
                 <div class="col-md-6">
-                    <h4>Identification de la patiente </h4>
+                  
                     <div class="form-group">
                         <label for="nom_patient">Nom patiente</label>
                         <input type="text"name="nom_patient" class="form-control" id="nom_patient" value="{{ old('nom_patient') }}">
@@ -38,8 +41,9 @@
                         <input type="text"name="telephone_patient" class="form-control" id="telephone_patient" value="{{ old('telephone_patient') }}">
                     </div>
                 </div>
+                    
                 <div class="col-md-6">
-                    <h4>Identification du mari</h4>
+                    <h3 class="header-title">Identification du mari</h3>
                     <div class="form-group">
                         <label for="nom_mari">Nom</label>
                         <input type="text"name="nom_mari" class="form-control" id="nom_mari" value="{{ old('nom_mari') }}">
@@ -66,7 +70,7 @@
                     </div>
                 </div>
                 </div>
-            <button class="btn btn-success " type="submit">enregistrer</button>
+            <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
         </div>
     </div>

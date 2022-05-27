@@ -1,23 +1,18 @@
-<div class="card-box mt-5">
+<div class="card-box ">
     <a href="{{ route('agent-sante.create') }} " class="btn btn-primary mb-3">
         Ajouter un Agent de Santé
     </a>
-    <h4 class="header-title">Liste des agents de santé</h4>
-    <p class="sub-header">
-        You can also invert the colors—with light text on dark backgrounds—with <code class="highlighter-rouge">.table-dark</code>.
-    </p>
-    <div class="table-responsive">
+    <div class="table-responsive table-bordered table-sm">
         <table class="table mb-0">
             <thead>
             <tr>
-                <th>#</th>
+                <th>N°</th>
                 <th>Nom </th>
                 <th>Prénom</th>
                 <th>Adresse</th>
                 <th>email</th>
                 <th>Téléphone</th>
-                <th>Qualification</th>
-                <th>Password</th>
+                
                 <th class="text-right">Actions</th>
             </tr>
             </thead>
@@ -30,14 +25,13 @@
                 <td>{{ $agent->adresse }}</td>
                 <td>{{ $agent->email }}</td>
                 <td>{{ $agent->telephone }}</td>
-                <td>{{ $agent->qualification }}</td>
-                <td>{{ $agent->password }}</td>
+               
                 <td class="text-right">
-                    <a href="{{ route('agent-sante.edit', $agent->id_agent) }}" class="btn btn-info">
+                    <a href="{{ route('agent-sante.edit', $agent->id_agent) }}" class="btn btn-info ">
                         Modifier
                     </a>
                     <a href="{{ route('agent-sante.destroy', $agent->id_agent) }}" class="btn btn-danger btn-delete">
-                      Supprimer
+                        Supprimer
                     </a>
                 </td>
             </tr>

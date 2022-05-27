@@ -1,10 +1,10 @@
-<div class="table-responsive table-bordered">
+<div class="table-responsive table-bordered table-sm">
     <table class="table mb-0">
         <thead>
         <tr>
-            <th>#</th>
-            <th>Nom antecedent</th>
-            <th>Categorie</th>
+            <th>N°</th>
+            <th>Nom antécédent</th>
+            <th>Catégorie</th>
             <th class="text-right">Actions</th>
         </tr>
         </thead>

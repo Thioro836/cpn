@@ -1,3 +1,4 @@
+<h4 class="header-title text-center">Modifier une gestation</h4>
 <div class="card-box">
     @include('layouts.message')
     <form action="{{ route('gestations.update', $gestation->id_gestation) }}" method="post">

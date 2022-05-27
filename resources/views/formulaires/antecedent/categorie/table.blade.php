@@ -1,11 +1,10 @@
 <div class="card-box mt-1">
-    <h4 class="header-title mb-2">Liste des Catégories d'antécedent</h4>
 
-    <div class="table-responsive table-bordered">
+    <div class="table-responsive table-bordered mt-3 table-sm">
         <table class="table mb-0">
             <thead>
             <tr>
-                <th>#</th>
+                <th>N°</th>
                 <th>Nom Catégorie</th>
                 <th class="text-right">Actions</th>
             </tr>

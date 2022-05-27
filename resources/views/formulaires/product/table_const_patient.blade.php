@@ -1,17 +1,13 @@
+<h4 class="header-title text-center"> Liste des produit delivrés</h4>
 <div class="card-box mt-2">
-    <h4 class="header-title">Produit delivrés</h4>
-    <p class="sub-header">
-        For basic styling—light padding and only horizontal dividers—add the base class <code>.table</code> to any <code>&lt;table&gt;</code>.
-    </p>
-
 <div class="table-responsive">
     <table class="table mb-0">
 
         <thead>
         <tr>
-            <th>#</th>
-            <th>Nom</th>
-            <th>Quantité</th>
+            <th>N°</th>
+            <th>Nom du produit</th>
+            <th>Quantité reçue</th>
         </tr>
         </thead>
         <tbody>

@@ -1,3 +1,4 @@
+<h4 class="header-title text-center">Ajouter un dossier</h4>
 <div class="card-box">
     <form action="{{ route('dossiers.store') }}" method="POST">
         @csrf 
@@ -35,6 +36,6 @@
             <label for="dap">DAP </label>
             <input class="form-control" type="text" name="dap" id="dap">
         </div>
-        <button class="btn btn-success " type="submit">enregistrer</button>
+        <button class="btn btn-success " type="submit">Enregistrer</button>
     </form>
 </div>

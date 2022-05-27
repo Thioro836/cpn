@@ -12,23 +12,22 @@
                     <li class="breadcrumb-item active">Liste</li>
                 </ol>
             </div>
-            <h4 class="page-title">Gestion des patients</h4>
+            <h3 class="page-title text-center font-weight-bold">Liste  des patientes</h3>
         </div>
     </div>
 </div>
 
 <div class="card-box mt-2">
-    <h4 class="header-title mb-1">Liste des patientes</h4>
-
+   
     <a href="{{ route('patients.create') }}" class="btn btn-primary mb-2 float-right">
         Ajouter une patiente
     </a>
 
-    <div class="table-responsive table-bordered">
+    <div class="table-responsive table-bordered table-sm">
         <table class="table mb-0">
             <thead>
             <tr>
-               <th>#</th>
+               <th>N°</th>
                <th>Nom</th>
                <th>Prénom</th>
                <th>Adresse</th>

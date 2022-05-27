@@ -1,3 +1,4 @@
+<h4 class="header-title text-center">Ajouter un agent de santé</h4>
 <div class="card-box">
            @include('layouts.message')
             <form action="{{ route('agent-sante.store') }}" method="POST">
@@ -23,6 +24,7 @@
                 <label for="telephone">Téléphone</label>
                 <input type="text"name="telephone" class="form-control" id="telephone" value="{{ old('telephone') }}">
             </div>
+           
             <div class="form-group">
                 <label for="qualification">Qualification du prestataire</label>
                 <input type="text"name="qualification" class="form-control" id="qualification" value="{{ old('qualification') }}">
@@ -31,8 +33,7 @@
                 <label for="password">Password</label>
                 <input type="text"name="password" class="form-control" id="password" value="{{ old('qualification') }}">
             </div>
-            
-            <button class="btn btn-success " type="submit">enregistrer</button>
+            <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
 </div>
     

@@ -1,14 +1,9 @@
-<div class="card-box mt-5">
-    
-    <h4 class="header-title">Liste des produits</h4>
-    <p class="sub-header">
-        You can also invert the colors—with light text on dark backgrounds—with <code class="highlighter-rouge">.table-dark</code>.
-    </p>
-    <div class="table-responsive">
+<div class="card-box ">
+    <div class="table-responsive table-bordered table-sm">
         <table class="table mb-0">
             <thead>
             <tr>
-                <th>#</th>
+                <th>N°</th>
                 <th>Nom produit</th>
                 <th class="text-right">Actions</th>
             </tr>

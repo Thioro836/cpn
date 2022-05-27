@@ -1,3 +1,4 @@
+<h4 class="header-title text-center">Ajouter une gestation</h4>
 <div class="card-box">
     @include('layouts.message')
     <form action="{{ route('gestations.store') }}" method="post">
