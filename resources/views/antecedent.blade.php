@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">Liste</li>
                 </ol>
             </div>
-            <h4 class="page-title">Liste des antecedents</h4>
+            <h3 class="page-title text-center font-weight-bold">Liste des antécédents</h3>
         </div>
     </div>
 </div>

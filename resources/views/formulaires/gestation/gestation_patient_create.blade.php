@@ -1,5 +1,5 @@
-
-<div class="card-box">
+<h4 class="header-title text-center mt-3">Renseigner la valeur d'une gestation</h4>
+<div class="card-box ">
     <form action="{{ route('gestation-patient.store') }}" method="POST">
         @csrf
         <input type="hidden" value="{{ $dossier->id_dossier }}" name="dossier">
@@ -11,7 +11,7 @@
         </div>
         @endforeach
 
-        <button class="btn btn-success " type="submit">enregistrer</button>
+        <button class="btn btn-success " type="submit">Enregistrer</button>
     </form>
 </div>
 

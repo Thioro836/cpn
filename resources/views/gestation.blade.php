@@ -12,7 +12,7 @@
                     <li class="breadcrumb-item active">Liste</li>
                 </ol>
             </div>
-            <h4 class="page-title">Gestion des gestations antérieures</h4>
+            <h4 class="page-title text-center font-weight-bold">Liste des gestations antérieures</h4>
         </div>
     </div>
 </div>

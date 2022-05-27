@@ -1,6 +1,4 @@
-
-
-
+<h4 class=" header-title text-center">Ajouter  un vaccin</h4>
             <div class="card-box">
                 @include('layouts.message')
                 <form action="{{ route('vaccins.store') }}" method="post">

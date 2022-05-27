@@ -1,3 +1,4 @@
+<h4 class="header-title text-center">Modifier les informations  d'un agent de santé</h4>
  <div class="card-box">
             @include('layouts.message')
             <form action="{{ route('agent-sante.update',$agent->id_agent) }}" method="POST">
@@ -33,6 +34,6 @@
                 <input type="text"name="password" class="form-control" id="password" value="{{ $agent->password }}">
             </div>
             
-            <button class="btn btn-success " type="submit">enregistrer</button>
+            <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
 </div>

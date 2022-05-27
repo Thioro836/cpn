@@ -1,3 +1,4 @@
+<h4 class="header-title text-center">Modifier une catégorie d'antécédent</h4>
  <div class="card-box">
             @if (\Session::has('message'))
                 <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
@@ -7,10 +8,10 @@
             @csrf 
             @method('PUT')
             <div class="form-group">
-                <label for="nom">Nom de la categorie</label>
+                <label for="nom">Nom de la catégorie</label>
                 <input type="text"name="nom" class="form-control" id="nom" value="{{ $categorie->nom_cat_antecedent }}">
             </div>
-            <button class="btn btn-success " type="submit">enregistrer</button>
+            <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
 </div>
 

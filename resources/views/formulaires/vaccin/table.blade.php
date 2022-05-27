@@ -1,11 +1,9 @@
-<div class="card-box mt-1">
-    <h4 class="header-title">Liste des vaccins</h4>
-
-    <div class="table-responsive table-bordered">
+<div class="card-box mt-1"> 
+    <div class="table-responsive table-bordered table-sm">
         <table class="table mb-0">
             <thead>
             <tr>
-                <th>#</th>
+                <th>N°</th>
                 <th>Nom</th>
                 <th>Periodicité</th>
                 <th>Actions</th>
@@ -18,11 +16,11 @@
                 <td>{{ $vaccin->nom_vaccin }}</td>
                 <td>{{ $vaccin->periodicite }}</td>
                 <td class="text-right">
-                    <a href="{{ route('vaccins.edit',$vaccin->id_vaccin) }}" class="btn btn-primary mt-3">
+                    <a href="{{ route('vaccins.edit',$vaccin->id_vaccin) }}" class="btn btn-primary ">
                         Modifier
                     </a>
-                    <a href="{{ route('vaccins.destroy', $vaccin->id_vaccin) }}" class="btn btn-delete btn-danger mt-3">
-                        supprimer
+                    <a href="{{ route('vaccins.destroy', $vaccin->id_vaccin) }}" class="btn btn-delete btn-danger">
+                        Supprimer
                     </a>
                 </td>
             </tr>

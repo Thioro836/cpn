@@ -5,7 +5,7 @@
         <input type="hidden" value="{{ $dossier->id_dossier }}" name="dossier">
         @include('layouts.message')
         <div class="form-group">
-            <label >Catégorie de l'antecedent </label>
+            <label >Catégorie de l'antécédent </label>
             <select name="categorie" class="form-control" >
                 @foreach ($categories as $categorie )
                     <option value="{{ $categorie->id_categorie_antecedent }}">
@@ -17,7 +17,7 @@
        <div class="champ"></div>
 
 
-        <button class="btn btn-success " type="submit">enregistrer</button>
+        <button class="btn btn-success " type="submit">Enregistrer</button>
     </form>
 </div>
 <div id="model" style="display: none">

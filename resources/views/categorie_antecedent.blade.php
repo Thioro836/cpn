@@ -8,11 +8,11 @@
                     <li class="breadcrumb-item"><a href="javascript: void(0);">
                         {{ config('app.name') }}
                     </a></li>
-                    <li class="breadcrumb-item"><a href="javascript: void(0);">Categorie Antecedent</a></li>
+                    <li class="breadcrumb-item"><a href="javascript: void(0);">Catégorie Antécédent</a></li>
                     <li class="breadcrumb-item active">Liste</li>
                 </ol>
             </div>
-            <h4 class="page-title">Liste des categories d'antécedent </h4>
+            <h3 class="page-title text-center font-weight-bold">Liste des catégories d'antécédents </h3>
         </div>
     </div>
 </div>
