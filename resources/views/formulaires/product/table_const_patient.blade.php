@@ -1,4 +1,4 @@
-<h4 class="header-title text-center"> Liste des produit delivrés</h4>
+
 <div class="card-box mt-2">
 <div class="table-responsive">
     <table class="table mb-0">
