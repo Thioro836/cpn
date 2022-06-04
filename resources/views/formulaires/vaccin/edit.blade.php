@@ -1,5 +1,6 @@
-<h4 class=" header-title text-center">Modifier  un vaccin</h4>
+
             <div class="card-box">
+                <h4 class=" header-title text-center">Modifier  un vaccin</h4>
                 @if (\Session::has('message'))
                 <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
             @endif

@@ -12,17 +12,17 @@
                     <li class="breadcrumb-item active">Liste</li>
                 </ol>
             </div>
-            <h4 class="page-title text-center font-weight-bold">Liste des agents de santé</h4>
+            <h4 class="page-title font-weight-bold">Liste des agents de santé</h4>
         </div>
     </div>
 </div>
 <div class="row">
-    <div class="col-md-9">
+    <div class="col-md-8">
         <div class="card-box">
             @include('formulaires.agent.table')
         </div>
     </div>
-    <div class="col-md-3">
+    <div class="col-md-4">
         @include($form)
     </div>
 </div>

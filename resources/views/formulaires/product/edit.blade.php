@@ -1,5 +1,6 @@
-<h4 class="text-center">Modifier un produit</h4>
+
 <div class="card-box">
+    <h4 class="text-center mb-2">Modifier un produit</h4>
             @if (\Session::has('message'))
                 <h4 class="alert alert-success">{{ Session::get('message') }}</h4>
 

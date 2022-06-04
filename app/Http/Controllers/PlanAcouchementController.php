@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{PlanAccouchement};
+use App\Http\Requests\PlanAccouchementRequest;
 
 class PlanAcouchementController extends Controller
 {
@@ -33,7 +34,7 @@ class PlanAcouchementController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PlanAccouchementRequest $request)
     {
         PlanAccouchement::where('id_dossier', $request->id_dossier)->delete();
         PlanAccouchement::create($request->all());

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{DossierPatient,Patient};
+use App\Http\Requests\DossierRequest;
+
 use Carbon\Carbon;
 class DossierController extends Controller
 {
@@ -37,11 +39,11 @@ class DossierController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(DossierRequest $request)
     {
         $accouchement = $this->dateAccouchement($request->date_derniere_regle, $request->dure_cycle);
         $num = $this->genererNumeroDossier();
-        DossierPatient::create([
+       $dossier=DossierPatient::create([
         'date_derniere_regle'=>$request->date_derniere_regle,
         'dure_cycle'=>$request->dure_cycle,
         'date_enregistrement'=>now(),
@@ -53,7 +55,15 @@ class DossierController extends Controller
          'numero_dossier'=>$num,
          'date_accouchement'=>$accouchement
         ]);
-        return back()->with('message',"enregistrement reussi");
+        try {
+            send_sms($dossier->patient->telephone_patient, "Vote numéro de dossier est $num");
+            return back()->with('message',"enregistrement reussi");
+        } catch (\GuzzleHttp\Exception\ConnectException $th) {
+            $dossier->delete();
+            return back()->with('message',"Aucune connexion internet, impossible d'enregistrer le dossier");
+        }
+        
+        
     }
     function genererNumeroDossier(){
         $liste ='0123456789ABCD';

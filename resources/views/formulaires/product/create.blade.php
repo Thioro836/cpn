@@ -1,5 +1,6 @@
-<h4 class="text-center">Ajouter  un produit</h4>
+
 <div class="card-box">
+    <h4 class="text-center mb-2">Ajouter  un produit</h4>
             @include('layouts.message')
             <form action="{{ route('produit.store') }}" method="POST">
             @csrf 

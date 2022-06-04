@@ -58,4 +58,8 @@ class AgentSante extends Authenticatable
 	{
 		return $this->belongsToMany(Consultation::class, 'consultation_agent_sante', 'id_agent', 'id_consultation');
 	}
+	public function nomComplet()
+	{
+		return "{$this->prenom} {$this->nom}";
+	}
 }

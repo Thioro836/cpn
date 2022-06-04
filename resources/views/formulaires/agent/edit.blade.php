@@ -1,5 +1,6 @@
-<h4 class="header-title text-center">Modifier les informations  d'un agent de santé</h4>
+
  <div class="card-box">
+    <h4 class="header-title text-center">Modifier les informations  d'un agent de santé</h4>
             @include('layouts.message')
             <form action="{{ route('agent-sante.update',$agent->id_agent) }}" method="POST">
             @csrf 
@@ -29,10 +30,7 @@
                 <label for="qualification">Qualification du prestataire</label>
                 <input type="text"name="qualification" class="form-control" id="qualification" value="{{ $agent->qualification }}">
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="text"name="password" class="form-control" id="password" value="{{ $agent->password }}">
-            </div>
+            
             
             <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>

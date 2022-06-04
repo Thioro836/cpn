@@ -1,5 +1,7 @@
-<h4 class="header-title text-center">Ajouter un dossier</h4>
+
 <div class="card-box">
+    <h4 class="header-title text-center">Ajouter un dossier</h4>
+    @include('layouts.message')
     <form action="{{ route('dossiers.store') }}" method="POST">
         @csrf 
        <input type="hidden" name="patient" value="{{  $patient->id_patient }}">

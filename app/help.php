@@ -1,6 +1,18 @@
 <?php
 use Carbon\Carbon;
 use Illuminate\Support\Arr;
+use Mediumart\Orange\SMS\SMS;
+use Mediumart\Orange\SMS\Http\SMSClient;
+
+
+function send_sms($telephone, $message){
+	$client = SMSClient::getInstance('vvDM0A7NvZaJ9EM6hUvUbuD5uFXO9zA6', 'FDUZdIJcSDh412Bs');
+	$sms = new SMS($client);
+	$sms->message($message)
+    ->from('+224629901136')
+    ->to($telephone)
+    ->send();
+}
 
 function page_1(){
     return [

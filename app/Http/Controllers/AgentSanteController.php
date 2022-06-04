@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{AgentSante};
 use App\Http\Requests\AgentSanteRequest;
+use Illuminate\Support\Facades\Hash;
+use Propaganistas\LaravelPhone\PhoneNumber;
+
 class AgentSanteController extends Controller
 {
     /**
@@ -37,18 +40,29 @@ class AgentSanteController extends Controller
      */
     public function store(AgentSanteRequest $request)
     {
+        $phone=PhoneNumber::make($request->telephone, 'GN');
+        $password=$this->genererPassword();
         AgentSante::create([
             'nom'  => $request->nom,
             'prenom'=> $request->prenom,
             'adresse'=> $request->adresse,
             'email'  => $request->email,
-            'telephone' => $request->telephone,
+            'telephone' => $phone,
             'qualification' => $request->qualification,
-            'password'   => $request->password
+            'password'   => Hash::make($password)
         ]);
+        send_sms($phone, "Votre compte a été crée avec succès, votre mot de passe par defaut est $password");
         return back()->with('message', "enregistrement reussi");
 
         
+    }
+    function genererPassword(){
+        $liste ='0123456789';
+        $resultat = "";
+        for($i=1;$i<=4;$i++){
+            $resultat .=substr($liste,(rand()%(strlen($liste))),1);
+        }
+        return $resultat;
     }
 
     /**

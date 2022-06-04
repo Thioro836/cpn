@@ -1,5 +1,6 @@
 
 <div class="card-box">
+    <h4 class="header-title text-center">Ajouter les informations concernant le plan d'accouchement</h4>
     <form action="{{ route('plan-acouchement.store') }}#first" method="POST">
         @csrf
         <input type="hidden" value="{{ $dossier->id_dossier }}" name="id_dossier">

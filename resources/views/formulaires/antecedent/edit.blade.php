@@ -1,5 +1,6 @@
-<h4 class="header-title text-center">Modifier un antécédent</h4>
+
 <div class="card-box">
+    <h4 class="header-title text-center mb-2">Modifier un antécédent</h4>
     <form action="{{ route('antecedents.update', $antecedent->id_antecedent) }}" method="POST">
         @csrf
         @method('PUT')
