@@ -1,5 +1,6 @@
-<h4 class=" header-title text-center">Ajouter  un vaccin</h4>
+
             <div class="card-box">
+                <h4 class=" header-title text-center mb-2">Ajouter  un vaccin</h4>
                 @include('layouts.message')
                 <form action="{{ route('vaccins.store') }}" method="post">
                     @csrf

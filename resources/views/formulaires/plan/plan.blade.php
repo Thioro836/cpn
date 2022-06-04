@@ -1,6 +1,6 @@
 <div class="card">
     <div class="card-header">
-        <h2>PLAN D'ACOUCHEMENT</h2>
+        <h2>Plan d'accouchement</h2>
     </div>
     <div class="card-body">
         @if($dossier->planAccouchement()->count())

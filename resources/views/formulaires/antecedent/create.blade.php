@@ -1,5 +1,6 @@
-<h4 class="header-title text-center">Ajouter  un antécédent</h4>
+
 <div class="card-box">
+    <h4 class="header-title text-center mb-2">Ajouter  un antécédent</h4>
     <form action="{{ route('antecedents.store') }}" method="POST">
         @csrf
         @include('layouts.message')

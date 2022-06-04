@@ -1,5 +1,6 @@
-<h4 class=" header-title text-center">Ajouter  une catégorie d'antécédent</h4>
+
         <div class="card-box">
+            <h4 class=" header-title text-center mb-2">Ajouter  une catégorie d'antécédent</h4>
             @include('layouts.message')
             <form action="{{ route('categorie-antecedent.store') }}" method="POST">
             @csrf 

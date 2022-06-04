@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+<h2 class="header-title text-center">Modifier les informations personnelles de la patiente</h2>
 <div class="row">
     <div class="col-md-6" >
         <div class="card-box">

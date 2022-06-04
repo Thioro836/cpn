@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use App\Models\AgentSante;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,6 +16,14 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        AgentSante::create([
+            'nom'  =>'Bah',
+            'prenom'=>'Sory binta',
+            'adresse'=>'lambanyi',
+            'email' =>'hadjasorybintabah@gmail.com',
+            'telephone'=>'629901136',
+            'qualification'=>'medecin generaliste',
+            'password'=>Hash::make('sangaredi2014')
+        ]);
     }
 }

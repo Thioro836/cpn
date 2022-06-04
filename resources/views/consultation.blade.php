@@ -21,7 +21,7 @@
 
     <div class="col-md-12">
         <div class="card-box">
-            <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2">
+            <a href="{{ route('consultations.create',['dossier'=>$dossier->id_dossier]) }}" class="btn btn-primary mt-3 mb-2 ">
                 Nouvelle consultation
             </a>
 

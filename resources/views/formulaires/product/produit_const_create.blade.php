@@ -1,5 +1,6 @@
 
 <div class="card-box">
+    <h4 class="text-center">Quantité produits délivrées</h4>
     <form action="{{ route('produit-consultation.store') }}" method="POST">
         @csrf
         <input type="hidden" value="{{ $consultation->id_consultation }}" name="consultation">

@@ -1,5 +1,5 @@
-<h4 class="header-title text-center">Ajouter un agent de santé</h4>
 <div class="card-box">
+    <h4 class="header-title text-center mb-3">Ajouter un agent de santé</h4>
            @include('layouts.message')
             <form action="{{ route('agent-sante.store') }}" method="POST">
             @csrf 
@@ -29,10 +29,7 @@
                 <label for="qualification">Qualification du prestataire</label>
                 <input type="text"name="qualification" class="form-control" id="qualification" value="{{ old('qualification') }}">
             </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="text"name="password" class="form-control" id="password" value="{{ old('qualification') }}">
-            </div>
+           
             <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
 </div>

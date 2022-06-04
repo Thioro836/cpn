@@ -1,5 +1,6 @@
 
 <div class="card-box">
+    <h4 class="header-title text-center">Ajouter une nouvelle valeur d'antécédent</h4>
     <form action="{{ route('dossier-antecedents.store') }}" method="POST">
         @csrf
         <input type="hidden" value="{{ $dossier->id_dossier }}" name="dossier">

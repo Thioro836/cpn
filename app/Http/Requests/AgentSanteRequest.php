@@ -27,10 +27,10 @@ class AgentSanteRequest extends FormRequest
             'nom' =>'required',
             'prenom' =>'required',
             'adresse' =>'required',
-            'email' => 'required|email',
-            'telephone' =>'required|max:9|min:9',
+            'email' => 'required|email|unique:agent_sante',
+            'telephone' =>'required|unique:agent_sante|phone:GN',
             'qualification' =>'required',
-            'password' => 'required',
+        
 
         ];
     }

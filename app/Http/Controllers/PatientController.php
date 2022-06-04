@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\{Patient};
 use App\Http\Requests\AgentSanteRequest;
+use Propaganistas\LaravelPhone\PhoneNumber;
 
 class PatientController extends Controller
 {
@@ -38,10 +39,21 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        Patient::create(
+        $request->merge([
+            'telephone_patient'=>PhoneNumber::make($request->telephone_patient, 'GN'),
+            'telephone_mari'=>PhoneNumber::make($request->telephone_mari, 'GN'),
+        ]);
+        $patient=Patient::create(
             $request->all()
         );
-        return back()->with('message', "enregistrement reussi");
+        try {
+            send_sms($request->telephone_patient, 'Bienvenue au CS Kaporo Fondis');
+            return back()->with('message', "enregistrement reussi");
+        } catch (\Throwable $th) {
+            $patient->delete();
+            return back()->with('message',"Aucune connexion internet, impossible d'ajouter la patiente"); 
+        }
+        
     }
 
     /**

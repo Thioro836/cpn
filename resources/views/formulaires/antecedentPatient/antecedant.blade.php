@@ -1,6 +1,7 @@
+
 <div class="card">
     <div class="card-header">
-        <h3>ANTECEDENTS <b>{{ $categorie->nom_cat_antecedent }}</b></h3>
+        <h3>Antécédent  <b>{{ $categorie->nom_cat_antecedent }}</b></h3>
     </div>
     <div class="card-body">
         @php
