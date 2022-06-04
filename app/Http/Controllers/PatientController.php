@@ -46,8 +46,14 @@ class PatientController extends Controller
         $patient=Patient::create(
             $request->all()
         );
-        send_sms($request->telephone_patient, 'Bienvenue au CS Kaporo Fondis');
-        return back()->with('message', "enregistrement reussi");
+        try {
+            send_sms($request->telephone_patient, 'Bienvenue au CS Kaporo Fondis');
+            return back()->with('message', "enregistrement reussi");
+        } catch (\Throwable $th) {
+            $patient->delete();
+            return back()->with('message',"Aucune connexion internet, impossible d'ajouter la patiente"); 
+        }
+        
     }
 
     /**

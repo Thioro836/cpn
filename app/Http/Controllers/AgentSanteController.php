@@ -42,7 +42,7 @@ class AgentSanteController extends Controller
     {
         $phone=PhoneNumber::make($request->telephone, 'GN');
         $password=$this->genererPassword();
-        AgentSante::create([
+        $agent=AgentSante::create([
             'nom'  => $request->nom,
             'prenom'=> $request->prenom,
             'adresse'=> $request->adresse,
@@ -51,8 +51,14 @@ class AgentSanteController extends Controller
             'qualification' => $request->qualification,
             'password'   => Hash::make($password)
         ]);
-        send_sms($phone, "Votre compte a été crée avec succès, votre mot de passe par defaut est $password");
+        try {
+            send_sms($phone, "Votre compte a été crée avec succès, votre mot de passe par defaut est $password");
         return back()->with('message', "enregistrement reussi");
+        } catch (\Throwable $th) {
+            $agent->delete();
+            return back()->with('message',"Aucune connexion internet, impossible d'ajouter l'agent de santé'");   
+        }
+       
 
         
     }
