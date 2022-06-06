@@ -1,6 +1,6 @@
 
 <div class="card-box mt-2">
-<div class="table-responsive">
+<div class="table-responsive table-bordered">
     <table class="table mb-0">
 
         <thead>

@@ -28,6 +28,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('gestation-patient', 'App\Http\Controllers\GestationDossierPatientController');
     Route::resource('produit-consultation', 'App\Http\Controllers\ProduitConsultController');
     Route::resource('plan-acouchement', 'App\Http\Controllers\PlanAcouchementController');
+    Route::resource('situation', 'App\Http\Controllers\SituationController');
 });
 
 

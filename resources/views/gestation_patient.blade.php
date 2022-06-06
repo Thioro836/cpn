@@ -1,5 +1,6 @@
 @extends('layouts.master')
 @section('content')
+
     <div class="row">
         <div class="col-md-8">
             @include('formulaires.gestation.table_gestation_patient')
