@@ -39,31 +39,51 @@ class DossierController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    public function debutGrossesse($date, $age)
+	{
+
+		$date = $date->subDays($age)->format('Y-m-d');
+
+		return $date;
+	}
+
     public function store(DossierRequest $request)
     {
         $accouchement = $this->dateAccouchement($request->date_derniere_regle, $request->dure_cycle);
         $num = $this->genererNumeroDossier();
-       $dossier=DossierPatient::create([
-        'date_derniere_regle'=>$request->date_derniere_regle,
-        'dure_cycle'=>$request->dure_cycle,
-        'date_enregistrement'=>now(),
-        'hadicap_pysique'=>($request->handicap_physique == 'oui'),
-        'groupe_sanguin'=>$request->groupe_sanguin,
-        'taille_patiente'=>$request->taille_patiente,
-        'dap'=>$request->dap,
-         'id_patient'=>$request->patient,
-         'numero_dossier'=>$num,
-         'date_accouchement'=>$accouchement
+        $dossier = DossierPatient::create([
+            'date_derniere_regle'=>$request->date_derniere_regle,
+            'dure_cycle'=>$request->dure_cycle,
+            'date_enregistrement'=>now(),
+            'hadicap_pysique'=>($request->handicap_physique == 'oui'),
+            'groupe_sanguin'=>$request->groupe_sanguin,
+            'taille_patiente'=>$request->taille_patiente,
+            'dap'=>$request->dap,
+            'id_patient'=>$request->patient,
+            'numero_dossier'=>$num,
+            'date_accouchement'=>$accouchement
         ]);
+
+        $consultations = [8, 12, 17, 22, 27, 32, 37];
+
+        $message = "Calendrier des consultations prénatales \n";
+
+		foreach ($consultations as $key => $consultation) {
+			$date = create_rendez_vous($dossier, $accouchement, $consultation);
+			$ordre = $key+1;
+			$message .= $ordre.": $date\n";
+		}
+
         try {
-            send_sms($dossier->patient->telephone_patient, "Vote numéro de dossier est $num");
+            send_sms($dossier->patient->telephone_patient, $message);
             return back()->with('message',"enregistrement reussi");
         } catch (\GuzzleHttp\Exception\ConnectException $th) {
             $dossier->delete();
             return back()->with('message',"Aucune connexion internet, impossible d'enregistrer le dossier");
         }
-        
-        
+
+
     }
     function genererNumeroDossier(){
         $liste ='0123456789ABCD';

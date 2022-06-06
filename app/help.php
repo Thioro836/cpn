@@ -3,6 +3,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Arr;
 use Mediumart\Orange\SMS\SMS;
 use Mediumart\Orange\SMS\Http\SMSClient;
+use App\Models\{DossierPatient,Patient, RendezVou};
 
 
 function send_sms($telephone, $message){
@@ -78,6 +79,21 @@ function dateFormat($date, $type = 'table'){
  			return "";
  			break;
  	}
+}
+
+function create_rendez_vous($dossier, $date, $semaine){
+	$date = Carbon::parse($date)->sub(9, 'month')->addWeeks($semaine)->format('Y-m-d');
+
+	$date_rappel = Carbon::parse($date)->subDays(1)->format('Y-m-d');
+
+	RendezVou::create([
+		'date_rendez_vous' => $date,
+		'id_dossier' => $dossier->id_dossier
+	])->update([
+		'date_rappel' => $date_rappel,
+	]);
+
+	return Carbon::parse($date)->format('d/m/Y');
 }
 
 ?>

@@ -12,8 +12,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * Class RendezVou
  * 
- * @property int $id_rdv
- * @property Carbon $date_rdv
+ * @property int $id_rendez_vous
+ * @property Carbon $date_rendez_vous
  * @property int $id_dossier
  * 
  * @property DossierPatient $dossierPatient
@@ -23,7 +23,7 @@ use Illuminate\Database\Eloquent\Model;
 class RendezVou extends Model
 {
 	protected $table = 'rendez_vous';
-	protected $primaryKey = 'id_rdv';
+	protected $primaryKey = 'id_rendez_vous';
 	public $timestamps = false;
 	public static $snakeAttributes = false;
 
@@ -32,11 +32,11 @@ class RendezVou extends Model
 	];
 
 	protected $dates = [
-		'date_rdv'
+		'date_rendez_vous'
 	];
 
 	protected $fillable = [
-		'date_rdv',
+		'date_rendez_vous',
 		'id_dossier'
 	];
 
