@@ -68,21 +68,21 @@
                     <div class="logo-box">
                         <a href="index.html" class="logo logo-dark text-center">
                             <span class="logo-sm">
-                                <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../assets/images/Capture.png" alt="" height="22">
                                 <!-- <span class="logo-lg-text-light">UBold</span> -->
                             </span>
                             <span class="logo-lg">
-                                <img src="../assets/images/logo-dark.png" alt="" height="20">
+                                <img src="../assets/images/Capture.png" alt="" height="20">
                                 <!-- <span class="logo-lg-text-light">U</span> -->
                             </span>
                         </a>
 
                         <a href="index.html" class="logo logo-light text-center">
                             <span class="logo-sm">
-                                <img src="../assets/images/logo-sm.png" alt="" height="22">
+                                <img src="../assets/images/Capture.png" alt="" height="22">
                             </span>
                             <span class="logo-lg">
-                                <img src="../assets/images/logo-light.png" alt="" height="20">
+                                <img src="../assets/images/CPN.png" alt="" height="60">
                             </span>
                         </a>
                     </div>
@@ -383,13 +383,13 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                2015 - <script>document.write(new Date().getFullYear())</script> &copy; UBold theme by <a href="">Coderthemes</a>
+                                <script>document.write(new Date().getFullYear())</script> &copy; CS Kaporo Fondis by Fatoumata Thiro BAH et Hadja Sory Binta BAH 
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-sm-block">
-                                    <a href="javascript:void(0);">About Us</a>
-                                    <a href="javascript:void(0);">Help</a>
-                                    <a href="javascript:void(0);">Contact Us</a>
+                                    <a href="javascript:void(0);"></a>
+                                    <a href="javascript:void(0);"></a>
+                                    <a href="javascript:void(0);"></a>
                                 </div>
                             </div>
                         </div>

@@ -122,7 +122,7 @@
                         <i class="mdi mdi-format-quote-open"></i>{{ __('Bembeya Group') }}<i class="mdi mdi-format-quote-close"></i>
                     </p> --}}
                     <h5 class="text-white">
-                        {{ __('Develope par Thiro et Binta') }}
+                        {{ __('Dévelopée par Fatoumata Thiro BAH et Hadja Sory Binta BAH') }}
                     </h5>
                 </div> <!-- end auth-user-testimonial-->
             </div>

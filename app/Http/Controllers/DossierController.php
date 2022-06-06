@@ -145,6 +145,7 @@ class DossierController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DossierPatient::find($id)->delete();
+        return response(['status' =>true]);
     }
 }
