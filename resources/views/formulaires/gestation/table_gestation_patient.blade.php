@@ -1,7 +1,7 @@
 
 <div class="card-box mt-2">
     <h4 class="header-title mt-3"> Liste des gestations antérieures et leurs valeurs</h4>
-<div class="table-responsive">
+<div class="table-responsive table-bordered">
     <table class="table mb-0">
 
         <thead>

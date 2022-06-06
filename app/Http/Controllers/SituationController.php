@@ -3,23 +3,25 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\{Antecedent,CategorieAntecedent};
-use App\Http\Requests\AntecedentRequest; 
+use App\Models\{Situation,DossierPatient,CategorieSituation};
 
-class AntecedentController extends Controller
+class SituationController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request )
     {
-       return view('antecedent', [
-           'form' => 'formulaires.antecedent.create',
-           'listesAntecedents' => Antecedent::get(),
-           'categories' => CategorieAntecedent::get()
-       ]);
+        $dossier=DossierPatient::find($request->dossier);
+        return view('situation',[
+            'dossier'=>$dossier,
+            'form' => 'formulaires.situation.create',
+            'situations'=> Situation::get(),
+            'categories'=>CategorieSituation::get()
+        ]);
+        
     }
 
     /**
@@ -38,14 +40,21 @@ class AntecedentController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(AntecedentRequest $request)
+    public function store(Request $request)
     {
-        Antecedent::create([
-            'nom' => $request->nom,
-            'id_categorie_antecedent' => $request->categorie
+        Situation::create([
+            'numero' => $request->numero,
+            'sexe_enfant' => $request->sexe_enfant,
+		    'vivant'=> $request->vivant,
+		    'age_enfant'=> $request->age_enfant,
+		    'cause_deces'=> $request->cause_deces,
+            'id_dossier'=> $request->dossier,
+            'id_categorie_situation'=>$request->categories
         ]);
         return back()->with('message',"enregistrement reussi");
     }
+
+    
 
     /**
      * Display the specified resource.
@@ -66,13 +75,7 @@ class AntecedentController extends Controller
      */
     public function edit($id)
     {
-        $antecedent=Antecedent::find($id);
-        return view('antecedent', [
-            'form' => 'formulaires.antecedent.edit',
-            'listesAntecedents' => Antecedent::get(),
-            'categories' => CategorieAntecedent::get(),
-            'antecedent' =>$antecedent
-        ]);
+        //
     }
 
     /**
@@ -84,11 +87,7 @@ class AntecedentController extends Controller
      */
     public function update(Request $request, $id)
     {
-       Antecedent::find($id)->update([
-        'nom' => $request->nom,
-        'id_categorie_antecedent' => $request->categorie
-       ]);
-       return redirect('/antecedents')->with('message',"enregistrement reussi");
+        //
     }
 
     /**
@@ -99,7 +98,6 @@ class AntecedentController extends Controller
      */
     public function destroy($id)
     {
-        Antecedent::find($id)->delete();
-        return response(['status' =>true]);
+        //
     }
 }
