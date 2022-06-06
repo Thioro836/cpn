@@ -9,15 +9,30 @@ use Propaganistas\LaravelPhone\PhoneNumber;
 
 class PatientController extends Controller
 {
+    public function search($request, $patients)
+    {
+        if ($request->has('numero') AND $request->numero) {
+            $patients = $patients->where('telephone_patient', 'LIKE', "%{$request->numero}%");
+        }
+
+        if ($request->has('nom') AND $request->nom) {
+            $patients = $patients->where(function ($query) use ($request){
+                $query->where('prenom_patient', 'LIKE', "{$request->nom}%")
+                ->orWhere('nom_patient', 'LIKE', "{$request->nom}%");
+            });
+        }
+
+        return $patients->orderBy('nom_patient')->paginate(10)->withQueryString();
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         return view('patient',[
-            'listePatients'=>Patient::paginate(15)/*recuperer les info dans la bd*/
+            'listePatients'=> $this->search($request, new Patient())/*recuperer les info dans la bd*/
         ]);
     }
 
@@ -51,9 +66,9 @@ class PatientController extends Controller
             return back()->with('message', "enregistrement reussi");
         } catch (\Throwable $th) {
             $patient->delete();
-            return back()->with('message',"Aucune connexion internet, impossible d'ajouter la patiente"); 
+            return back()->with('message',"Aucune connexion internet, impossible d'ajouter la patiente");
         }
-        
+
     }
 
     /**

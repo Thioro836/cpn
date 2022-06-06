@@ -18,10 +18,12 @@
 </div>
 
 <div class="card-box mt-2">
-   
+
     <a href="{{ route('patients.create') }}" class="btn btn-primary mb-2 float-right">
         Ajouter une patiente
     </a>
+
+    @include('formulaires.patient.header')
 
     <div class="table-responsive table-bordered table-sm">
         <table class="table mb-0">

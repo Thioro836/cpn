@@ -11,7 +11,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Patient
- * 
+ *
  * @property int $id_patient
  * @property string $nom_patient
  * @property string $prenom_patient
@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $secteur_mari
  * @property string|null $profession_mari
  * @property string|null $telephone_mari
- * 
+ *
  * @property Collection|DossierPatient[] $dossierPatients
  *
  * @package App\Models
