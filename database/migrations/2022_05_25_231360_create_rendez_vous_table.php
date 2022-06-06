@@ -13,6 +13,8 @@ class CreateRendezVousTable extends Migration
      */
     public function up()
     {
+        Schema::dropIfExists('rendez_vous');
+
         Schema::create('rendez_vous', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->integer('id_rendez_vous')->autoIncrement();
