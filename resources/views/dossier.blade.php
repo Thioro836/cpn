@@ -21,14 +21,14 @@
             <div class="card-box">
                 <div class="row">
                     @foreach ($dossiers as $dossier )
-                        <div class="col-md-6">
+                        <div class="col-md-6 fiche">
                             <div class="card m-1 shadow-none border">
                                 <div class="p-2">
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <div class="avatar-sm">
                                                 <span class="avatar-title bg-soft-primary text-primary rounded">
-                                                    <i class="mdi mdi-folder-zip font-18"></i>
+                                                    <i class="mdi mdi-folder-zip font-28"></i>
                                                 </span>
                                             </div>
                                         </div>
@@ -43,7 +43,7 @@
                                             <div class="row">
                                                 <div class="col-md-12">
                                                     <a href="{{ route('gestation-patient.index',['dossier'=> $dossier->id_dossier]) }} " class="btn btn-primary btn-xs">Gestation antérieure</a>
-                                                    <a href="{{ route('dossiers.destroy', $dossier->id_dossier) }} " class="btn btn-danger btn-delete btn-sm btn-block">
+                                                    <a href="{{ route('dossiers.destroy', $dossier->id_dossier) }} " class="btn btn-danger btn-delete btn-xs dossier">
                                                         Supprimer
                                                       </a>
                                                 </div>

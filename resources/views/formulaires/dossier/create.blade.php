@@ -3,17 +3,17 @@
     <h4 class="header-title text-center">Ajouter un dossier</h4>
     @include('layouts.message')
     <form action="{{ route('dossiers.store') }}" method="POST">
-        @csrf 
+        @csrf
        <input type="hidden" name="patient" value="{{  $patient->id_patient }}">
         <div class="form-group">
-            <label for="date_derniere_regle">date des dernières règes </label>
+            <label for="date_derniere_regle">Date des dernières règes </label>
             <input class="form-control" type="date" name="date_derniere_regle" id="date_derniere_regle">
         </div>
         <div class="form-group">
             <label for="dure_cycle">Durée du cycle</label>
             <input class="form-control" type="text" name="dure_cycle" id="dure_cycle">
         </div>
-        
+
         <p>Handicap physique</p>
         <div class="radio radio-info form-check-inline ml-1 mb-2">
             <input type="radio" id="handicap_physique_O" value="oui" name="handicap_physique" checked="">
@@ -28,7 +28,7 @@
             <select name="groupe_sanguin" class="form-control" id="">
                 <option value="O+">O+</option>
             </select>
-            
+
         </div>
         <div class="form-group">
             <label for="taille_patiente">Taille de la patiente </label>
