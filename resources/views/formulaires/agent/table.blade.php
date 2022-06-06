@@ -27,6 +27,9 @@
                     <a href="{{ route('agent-sante.destroy', $agent->id_agent) }}" class="btn btn-danger btn-delete btn-xs btn-block">
                         Supprimer
                     </a>
+                    <a href="" class="btn btn-secondary btn-xs btn-block">
+                        Details
+                    </a>
                 </td>
             </tr>
                 

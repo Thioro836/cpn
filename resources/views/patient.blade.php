@@ -47,15 +47,18 @@
                     <td>{{ $patient->adresse_patient }}</td>
                     <td>{{ $patient->telephone_patient }}</td>
                     <td class="text-right">
-                        <a href="{{ route('dossiers.index', ['patient'=> $patient->id_patient]) }}"  class="btn btn-success">
+                        <a href="{{ route('dossiers.index', ['patient'=> $patient->id_patient]) }}"  class="btn btn-success btn-xs ">
                             Dossiers
                             </a>
-                        <a href="{{ route('patients.edit', $patient->id_patient) }}" class="btn btn-info">
+                        <a href="{{ route('patients.edit', $patient->id_patient) }}" class="btn btn-info btn-xs ">
                             Modifier
                         </a>
-                        <a href="{{ route('patients.destroy', $patient->id_patient) }}" class="btn btn-danger btn-delete">
+                        <a href="{{ route('patients.destroy', $patient->id_patient) }}" class="btn btn-danger btn-delete btn-xs ">
                           Supprimer
                         </a>
+                        <a href="" class="btn btn-secondary  btn-xs ">
+                            Details
+                          </a>
                 </tr>
                 @endforeach
             </tbody>
