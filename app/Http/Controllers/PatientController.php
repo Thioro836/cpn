@@ -79,7 +79,9 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('formulaires.patient.details', [
+            'patient' => Patient::find($id)
+        ]);
     }
 
     /**

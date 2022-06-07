@@ -56,13 +56,38 @@
                         <a href="{{ route('patients.destroy', $patient->id_patient) }}" class="btn btn-danger btn-delete btn-xs ">
                           Supprimer
                         </a>
-                        <a href="" class="btn btn-secondary  btn-xs ">
+                        <a href="javascript: void(0);" data-href="{{ route('patients.show', $patient->id_patient) }}" class="btn btn-secondary btn-xs btn-details">
                             Details
-                          </a>
+                        </a>
                 </tr>
                 @endforeach
             </tbody>
         </table>
     </div>
 </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+            $('.btn-details').on('click', function(e) {
+                e.preventDefault();
+
+                var url = $(this).attr('data-href');
+
+                $.confirm({
+                    type: 'green',
+                    columnClass: 'col-md-6',
+                    content: "url:"+url,
+                    title: "Informations sur la patiente",
+                    theme: 'material',
+                    buttons: {
+                        OK: function(){
+                            return true;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
