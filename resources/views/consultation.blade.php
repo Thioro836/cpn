@@ -61,6 +61,10 @@
                                     <a href="{{ route('produit-consultation.index',['consultation'=>$consultation->id_consultation]) }}" class="btn btn-primary btn-sm btn-block">
                                         Produits delivrés
                                        </a>
+                                    </a>
+                                    <a href="javascript: void(0);" data-href="{{ route('consultations.show', $consultation->id_consultation) }}" class="btn btn-secondary btn-sm btn-block btn-details">
+                                        Details
+                                    </a>
 
                             </tr>
                             @endforeach
@@ -122,6 +126,31 @@
 
             var id=$("select[name=categorie] option:selected").val();
             getAntecedants(id);
+        });
+    </script>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+            $('.btn-details').on('click', function(e) {
+                e.preventDefault();
+
+                var url = $(this).attr('data-href');
+
+                $.confirm({
+                    type: 'green',
+                    columnClass: 'col-md-6',
+                    content: "url:"+url,
+                    title: "Informations sur la patiente",
+                    theme: 'material',
+                    buttons: {
+                        OK: function(){
+                            return true;
+                        }
+                    }
+                });
+            });
         });
     </script>
 @endsection

@@ -87,7 +87,9 @@ class ConsultationController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('formulaires.consultation.details', [
+            'consultation' => Consultation::find($id)
+        ]);
     }
 
     /**
