@@ -9,21 +9,18 @@
         </div>
 
         <h5 class="mb-3 mt-4 text-uppercase bg-light p-2">
-            <i class="mdi mdi-account-circle me-1"></i> Personal Information
+            <i class="mdi mdi-account-circle me-1"></i> Informations Personnelle
         </h5>
         <div class="">
 
-            <h4 class="font-13 text-muted text-uppercase mb-1">Date of Birth :</h4>
-            <p class="mb-3"> March 23, 1984 (34 Years)</p>
+            <h4 class="font-13 text-muted text-uppercase mb-1">Adresse</h4>
+            <p class="mb-3"> {{ $agent->adresse }}</p>
 
-            <h4 class="font-13 text-muted text-uppercase mb-1">Company :</h4>
-            <p class="mb-3">Vine Corporation</p>
+            <h4 class="font-13 text-muted text-uppercase mb-1">Email</h4>
+            <p class="mb-3">{{ $agent->email }}</p>
 
-            <h4 class="font-13 text-muted text-uppercase mb-1">Added :</h4>
-            <p class="mb-3"> April 22, 2016</p>
-
-            <h4 class="font-13 text-muted text-uppercase mb-1">Updated :</h4>
-            <p class="mb-0"> Dec 13, 2017</p>
+            <h4 class="font-13 text-muted text-uppercase mb-1">Telephone</h4>
+            <p class="mb-3"> {{ $agent->telephone }}</p>
 
         </div>
     </div>
