@@ -26,16 +26,16 @@ class DatabaseSeeder extends Seeder
         //     'password'=>Hash::make('sangaredi2014')
         // ]);
 
-        AgentSante::where('email', 'hadjasorybintabah@gmail.com')->update(['admin'=> true]);
+        //AgentSante::where('email', 'hadjasorybintabah@gmail.com')->update(['admin'=> true]);
 
-        // CategorieSituation::whereNotNull('nom_cat_situation')->delete();
+        CategorieSituation::whereNotNull('nom_cat_situation')->delete();
 
-        // CategorieSituation::create([
-        //     'nom_cat_situation' => "DERNIER NÉ"
-        // ]);
+        CategorieSituation::create([
+            'nom_cat_situation' => "DERNIER NÉ"
+        ]);
 
-        // CategorieSituation::create([
-        //     'nom_cat_situation' => "AVANT DERNIER NÉ"
-        // ]);
+        CategorieSituation::create([
+            'nom_cat_situation' => "AVANT DERNIER NÉ"
+        ]);
     }
 }
