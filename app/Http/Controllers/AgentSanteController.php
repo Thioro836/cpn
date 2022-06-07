@@ -56,11 +56,11 @@ class AgentSanteController extends Controller
         return back()->with('message', "enregistrement reussi");
         } catch (\Throwable $th) {
             $agent->delete();
-            return back()->with('message',"Aucune connexion internet, impossible d'ajouter l'agent de santé'");   
+            return back()->with('message',"Aucune connexion internet, impossible d'ajouter l'agent de santé'");
         }
-       
 
-        
+
+
     }
     function genererPassword(){
         $liste ='0123456789';
@@ -79,7 +79,9 @@ class AgentSanteController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('formulaires.agent.detail', [
+            'agent' => AgentSante::find($id)
+        ]);
     }
 
     /**

@@ -27,3 +27,29 @@
     </div>
 </div>
 @endsection
+
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+            $('.btn-details').on('click', function(e) {
+                e.preventDefault();
+
+                var url = $(this).attr('data-href');
+
+                $.confirm({
+                    type: 'green',
+                    columnClass: 'col-md-6',
+                    content: "url:"+url,
+                    title: "Information sur l'agent",
+                    theme: 'material',
+                    buttons: {
+                        OK: function(){
+                            return true;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+@endsection
