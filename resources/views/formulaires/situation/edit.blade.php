@@ -3,6 +3,7 @@
     @include('layouts.message')
     <form action="{{ route('situation.update', $situation->id_situattion) }}" method="post">
         @csrf
+        @method('PUT')
         <input type="hidden" name="dossier" value="{{ $dossier->id_dossier }}">
         <div class="form-group">
             <label for="numero">Categorie</label>
@@ -15,7 +16,7 @@
 
         <div class="form-group">
             <label for="numero">Numéro</label>
-            <input type="text" name="numero" class="form-control" id=numero>
+            <input type="text" name="numero" class="form-control" id=numero value="{{ $situation->numero }}">
         </div>
         <div class="form-group">
             <label for="sexe_enfant">Sexe de l'enfant</label>
@@ -33,11 +34,11 @@
         </div>
         <div class="form-group">
             <label for="age_enfant">Age de l'enfant</label>
-            <input type="text" name="age_enfant" class="form-control" id=age_enfant>
+            <input type="text" name="age_enfant" class="form-control" id=age_enfant value="{{ $situation->age_enfant }}">
         </div>
         <div class="form-group cause_deces" style="display: none">
             <label for="cause_deces">Cause du décès</label>
-            <input type="text" name="cause_deces" class="form-control" id=cause_deces>
+            <input type="text" name="cause_deces" class="form-control" id=cause_deces  value="{{ $situation->cause_deces }}">
         </div>
 
         <button class="btn btn-success " type="submit">Enregistrer</button>
