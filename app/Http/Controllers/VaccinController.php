@@ -4,9 +4,17 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{Vaccin};
-use App\Http\Requests\VaccinRequest; 
+use App\Http\Requests\VaccinRequest;
 class VaccinController extends Controller
 {
+
+    function __construct(){
+        $this->middleware(function ($request, $next) {
+            if(!auth()->user()->isAdmin()) return redirect('/');
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +36,7 @@ class VaccinController extends Controller
      */
     public function create()
     {
-     
+
     }
 
     /**

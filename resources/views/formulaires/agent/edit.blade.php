@@ -3,7 +3,7 @@
     <h4 class="header-title text-center">Modifier les informations  d'un agent de santé</h4>
             @include('layouts.message')
             <form action="{{ route('agent-sante.update',$agent->id_agent) }}" method="POST">
-            @csrf 
+            @csrf
             @method('PUT')
             <div class="form-group">
                 <label for="nom">Nom Agent de Santé</label>
@@ -20,7 +20,7 @@
             <div class="form-group">
                 <label for="email">EMAIL</label>
                 <input type="email"name="email" class="form-control" id="email" value="{{ $agent->email }}">
-            
+
             </div>
             <div class="form-group">
                 <label for="telephone">Téléphone</label>
@@ -30,8 +30,15 @@
                 <label for="qualification">Qualification du prestataire</label>
                 <input type="text"name="qualification" class="form-control" id="qualification" value="{{ $agent->qualification }}">
             </div>
-            
-            
+
+            <div class="form-group mb-3">
+                <div class="custom-control custom-checkbox">
+                    <input name="admin" {{ $agent->admin ? "checked" :"" }} type="checkbox" class="custom-control-input" id="checkbox-signin">
+                    <label class="custom-control-label" for="checkbox-signin">Administrateur</label>
+                </div>
+            </div>
+
+
             <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
 </div>

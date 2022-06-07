@@ -165,48 +165,51 @@
                                     <span> Calendrier des consultations </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('categorie-antecedent.index') }}">
+                            @if (Auth::user()->isAdmin())
+                                <li>
+                                    <a href="{{ route('categorie-antecedent.index') }}">
 
-                                    <span> Categorie antecedent </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('antecedents.index') }}">
+                                        <span> Categorie antecedent </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('antecedents.index') }}">
 
-                                    <span> Antecedent </span>
-                                </a>
-                            </li>
+                                        <span> Antecedent </span>
+                                    </a>
+                                </li>
 
-                            <li>
-                                <a href="{{ route('gestations.index') }}">
+                                <li>
+                                    <a href="{{ route('gestations.index') }}">
 
-                                    <span> Gestation </span>
-                                </a>
-                            </li>
-                           
-                            <li>
-                                <a href="{{ route('vaccins.index') }}">
+                                        <span> Gestation </span>
+                                    </a>
+                                </li>
 
-                                    <span> Vaccin </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('agent-sante.index') }}">
+                                <li>
+                                    <a href="{{ route('vaccins.index') }}">
 
-                                    <span> Agent santé </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="{{ route('produit.index') }}">
+                                        <span> Vaccin </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('agent-sante.index') }}">
 
-                                    <span> Produit </span>
-                                </a>
-                            </li>
+                                        <span> Agent santé </span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('produit.index') }}">
+
+                                        <span> Produit </span>
+                                    </a>
+                                </li>
+                            @endif
+
                             <li>
                                 <a href="{{ route('patients.index') }}">
 
-                                    <span> Patient </span>
+                                    <span> Gestion patients </span>
                                 </a>
                             </li>
                             {{-- <li>

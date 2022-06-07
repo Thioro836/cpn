@@ -49,8 +49,13 @@ class AgentSanteController extends Controller
             'email'  => $request->email,
             'telephone' => $phone,
             'qualification' => $request->qualification,
-            'password'   => Hash::make($password)
+            'password' => Hash::make($password)
         ]);
+
+        if($request->has('admin')) {
+            $agent->update(['admin' => true]);
+        }
+
         try {
             send_sms($phone, "Votre compte a été crée avec succès, votre mot de passe par defaut est $password");
         return back()->with('message', "enregistrement reussi");
@@ -113,6 +118,12 @@ class AgentSanteController extends Controller
         $agent->update(
             $request->all()
         );
+
+        $agent->update(['admin' => false]);
+
+        if($request->has('admin')) {
+            $agent->update(['admin' => true]);
+        }
         return  redirect('agent-sante');
     }
 
