@@ -2,10 +2,11 @@
 <div class="card-box mt-2">
     <div class="table-responsive table-bordered table-sm">
         <table class="table mb-0">
-    
+
             <thead>
             <tr>
                 <th>N°</th>
+                <th>Categorie</th>
                 <th>Numéro</th>
                 <th>Sexe de l'enfant</th>
                 <th>Vivant</th>
@@ -18,9 +19,10 @@
                @foreach ($situations as $key => $situation)
                <tr>
                 <th scope="row">{{ $key+1 }}</th>
+                <td>{{ $situation->categorieSituation->nom_cat_situation }}</td>
                 <td>{{ $situation->numero }}</td>
-                <td>{{ $situation->sexe_enfant }}</td>
-                <td>{{ $situation->vivant }}</td>
+                <td>{{ ($situation->sexe_enfant == "G" ? "Garçon":"Fille") }}</td>
+                <td>{{ $situation->vivant ? "OUI":"NON" }}</td>
                 <td>{{ $situation->age_enfant }}</td>
                 <td>{{ $situation->cause_deces }}</td>
 
@@ -38,4 +40,3 @@
         </table>
         </div>
     </div>
-    

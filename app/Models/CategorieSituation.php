@@ -11,10 +11,10 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class CategorieSituation
- * 
+ *
  * @property int $id_categorie_situation
  * @property string $nom_cat_situation
- * 
+ *
  * @property Collection|Situation[] $situations
  *
  * @package App\Models

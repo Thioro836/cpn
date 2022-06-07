@@ -10,7 +10,7 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class Situation
- * 
+ *
  * @property int $id_situattion
  * @property int $numero
  * @property string $sexe_enfant
@@ -19,7 +19,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $cause_deces
  * @property int $id_dossier
  * @property int $id_categorie_situation
- * 
+ *
  * @property CategorieSituation $categorieSituation
  * @property DossierPatient $dossierPatient
  *

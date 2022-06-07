@@ -15,13 +15,14 @@ class SituationController extends Controller
     public function index(Request $request )
     {
         $dossier=DossierPatient::find($request->dossier);
+
         return view('situation',[
             'dossier'=>$dossier,
             'form' => 'formulaires.situation.create',
-            'situations'=> Situation::get(),
+            'situations'=> $dossier->situations()->get(),
             'categories'=>CategorieSituation::get()
         ]);
-        
+
     }
 
     /**
@@ -49,12 +50,13 @@ class SituationController extends Controller
 		    'age_enfant'=> $request->age_enfant,
 		    'cause_deces'=> $request->cause_deces,
             'id_dossier'=> $request->dossier,
-            'id_categorie_situation'=>$request->categories
+            'id_categorie_situation'=>$request->categorie
         ]);
+
         return back()->with('message',"enregistrement reussi");
     }
 
-    
+
 
     /**
      * Display the specified resource.

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\{Consultation,DossierPatient,CategorieAntecedent};
+use App\Models\{Consultation, DossierPatient,CategorieAntecedent};
 use Illuminate\Http\Request;
 
 class ConsultationController extends Controller
@@ -18,7 +18,8 @@ class ConsultationController extends Controller
         return view ('consultation',[
             'dossier'=>$dossier,
             'consultations'=>$dossier->consultations()->get(),
-            'categories' =>CategorieAntecedent::get(),
+            'categories' => CategorieAntecedent::get(),
+            'situations'=> $dossier->situations()->get()
         ]);
     }
 

@@ -26,5 +26,26 @@
         @include($form)
     </div>
 </div>
+@endsection
 
-     @endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+            $('select[name=vivant]').change(function() {
+                if($(this).val() == "1") {
+                    $(".cause_deces").hide();
+                } else {
+                    $(".cause_deces").show();
+                }
+            });
+
+            var vivant = $('select[name=vivant] option:selected').val();
+
+            if(vivant == "1") {
+                $(".cause_deces").hide();
+            } else {
+                $(".cause_deces").show();
+            }
+        });
+    </script>
+@endsection
