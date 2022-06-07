@@ -80,7 +80,7 @@ class SituationController extends Controller
         $situation = Situation::find($id); //recuperer l'id de la ligne
         return view('situation',[
             'form' => 'formulaires.situation.edit',
-            'situations'=> Situation::get(),
+            'situations'=> $situation->dossierPatient->situations()->get(),
             'categories'=> CategorieSituation::get(), //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
             'situation'=> $situation,
             'dossier'=> $situation->dossierPatient,
