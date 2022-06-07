@@ -48,6 +48,7 @@ class AgentSante extends Authenticatable
 		'nom',
 		'prenom',
 		'adresse',
+        'admin',
 		'email',
 		'telephone',
 		'qualification',
@@ -61,5 +62,10 @@ class AgentSante extends Authenticatable
 	public function nomComplet()
 	{
 		return "{$this->prenom} {$this->nom}";
+	}
+
+    public function isAdmin()
+	{
+		return $this->admin;
 	}
 }

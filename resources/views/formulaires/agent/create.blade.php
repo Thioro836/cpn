@@ -2,7 +2,7 @@
     <h4 class="header-title text-center mb-3">Ajouter un agent de santé</h4>
            @include('layouts.message')
             <form action="{{ route('agent-sante.store') }}" method="POST">
-            @csrf 
+            @csrf
             <div class="form-group">
                 <label for="nom">Nom Agent de Santé</label>
                 <input type="text"name="nom" class="form-control" id="nom" value="{{ old('nom') }}">
@@ -18,19 +18,25 @@
             <div class="form-group">
                 <label for="email">EMAIL</label>
                 <input type="email"name="email" class="form-control" id="email" value="{{ old('email') }}">
-            
+
             </div>
             <div class="form-group">
                 <label for="telephone">Téléphone</label>
                 <input type="text"name="telephone" class="form-control" id="telephone" value="{{ old('telephone') }}">
             </div>
-           
+
             <div class="form-group">
                 <label for="qualification">Qualification du prestataire</label>
                 <input type="text"name="qualification" class="form-control" id="qualification" value="{{ old('qualification') }}">
             </div>
-           
+
+            <div class="form-group mb-3">
+                <div class="custom-control custom-checkbox">
+                    <input name="admin" type="checkbox" class="custom-control-input" id="checkbox-signin">
+                    <label class="custom-control-label" for="checkbox-signin">Administrateur</label>
+                </div>
+            </div>
+
             <button class="btn btn-success " type="submit">Enregistrer</button>
             </form>
 </div>
-    

@@ -4,10 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\{CategorieAntecedent};
-use App\Http\Requests\CategorieAntecedentRequest; 
+use App\Http\Requests\CategorieAntecedentRequest;
 
 class CategorieAntecedentController extends Controller
 {
+
+    function __construct(){
+        $this->middleware(function ($request, $next) {
+            if(!auth()->user()->isAdmin()) return redirect('/');
+            return $next($request);
+        });
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +36,7 @@ class CategorieAntecedentController extends Controller
      */
     public function create()
     {
-        
+
     }
 
     /**
