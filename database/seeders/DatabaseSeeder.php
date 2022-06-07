@@ -16,25 +16,22 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // AgentSante::create([
-        //     'nom'  =>'Bah',
-        //     'prenom'=>'Sory binta',
-        //     'adresse'=>'lambanyi',
-        //     'email' =>'hadjasorybintabah@gmail.com',
-        //     'telephone'=>'629901136',
-        //     'qualification'=>'medecin generaliste',
-        //     'password'=>Hash::make('sangaredi2014')
-        // ]);
+        $agent = AgentSante::firstOrCreate([
+            'nom'  =>'Bah',
+            'prenom'=>'Sory binta',
+            'adresse'=>'lambanyi',
+            'email' =>'hadjasorybintabah@gmail.com',
+            'telephone'=>'629901136',
+            'qualification'=>'medecin generaliste',
+        ]);
 
-        //AgentSante::where('email', 'hadjasorybintabah@gmail.com')->update(['admin'=> true]);
+        $agent->update(['admin'=> true, 'password'=>Hash::make('sangaredi2014')]);
 
-        CategorieSituation::whereNotNull('nom_cat_situation')->delete();
-
-        CategorieSituation::create([
+        CategorieSituation::firstOrCreate([
             'nom_cat_situation' => "DERNIER NÉ"
         ]);
 
-        CategorieSituation::create([
+        CategorieSituation::firstOrCreate([
             'nom_cat_situation' => "AVANT DERNIER NÉ"
         ]);
     }
