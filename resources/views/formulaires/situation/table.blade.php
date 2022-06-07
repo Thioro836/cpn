@@ -27,10 +27,10 @@
                 <td>{{ $situation->cause_deces }}</td>
 
                 <td class="text-right">
-                    <a href="{{ route('situation.edit', $situation->id_situattion) }}" class="btn btn-primary ">
+                    <a href="{{ route('situation.edit', $situation->id_situattion) }}" class="btn btn-primary btn-xs btn-block ">
                         Modifier
                     </a>
-                    <a href="{{ route('situation.destroy', $situation->id_situattion) }}" class="btn btn-delete btn-danger">
+                    <a href="{{ route('situation.destroy', $situation->id_situattion) }}" class="btn btn-delete btn-danger btn-xs btn-block">
                         Supprimer
                     </a>
                 </td>

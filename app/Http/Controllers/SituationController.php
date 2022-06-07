@@ -66,7 +66,7 @@ class SituationController extends Controller
      */
     public function show($id)
     {
-        //
+        
     }
 
     /**
@@ -75,9 +75,15 @@ class SituationController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
-    {
-        //
+    public function edit( $id)
+    {  
+        $situation = Situation::find($id); //recuperer l'id de la ligne
+       return view('situation',[
+        'form' => 'formulaires.situation.edit',
+        'situations'=>Situation::get(),
+        'categories'=>CategorieSituation::get(), //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
+        'situation'=>$situation
+       ]);
     }
 
     /**
@@ -89,7 +95,17 @@ class SituationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $dossier =DossierPatient::find($dossier);
+        Antecedent::find($id)->update([
+            'numero'=> $request->numero,
+            'sexe_enfant'=> $request->sexe_enfant,
+            'vivant'=> $request->vivant,
+            'age_enfant'=> $request->age_enfant,
+            'cause_deces'=> $request->cause_deces,
+            'id_dossier'=> $request->dossier,
+            'id_categorie_situation' => $request->categorie
+           ]);
+           return redirect('/situation')->with('message',"enregistrement reussi");
     }
 
     /**
@@ -100,6 +116,7 @@ class SituationController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Situation::find($id)->delete();
+        return response(['status' =>true]);
     }
 }
