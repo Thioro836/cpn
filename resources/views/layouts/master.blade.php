@@ -184,12 +184,7 @@
                                     <span> Gestation </span>
                                 </a>
                             </li>
-                            <li>
-                                <a href="{{ route('situation.index') }}">
-
-                                    <span> Situation </span>
-                                </a>
-                            </li>
+                           
                             <li>
                                 <a href="{{ route('vaccins.index') }}">
 

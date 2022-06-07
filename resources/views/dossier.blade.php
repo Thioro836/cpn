@@ -42,9 +42,9 @@
                                             </p>
                                             <div class="row">
                                                 <div class="col-md-12">
-                                                    <a href="{{ route('gestation-patient.index',['dossier'=> $dossier->id_dossier]) }} " class="btn btn-primary btn-xs">Gestation antérieure</a>
-                                                    <a href="{{ route('situation.index',['dossier'=> $dossier->id_dossier]) }} " class="btn btn-dark btn-xs">Situation des deux derniers nés</a>
-                                                    <a href="{{ route('dossiers.destroy', $dossier->id_dossier) }} " class="btn btn-danger btn-delete btn-xs dossier">
+                                                    <a href="{{ route('gestation-patient.index',['dossier'=> $dossier->id_dossier]) }} " class="btn btn-primary btn-xs btn-block">Gestation antérieure</a>
+                                                    <a href="{{ route('situation.index',['dossier'=> $dossier->id_dossier]) }} " class="btn btn-dark btn-xs btn-block">Situation des deux derniers nés</a>
+                                                    <a href="{{ route('dossiers.destroy', $dossier->id_dossier) }} " class="btn btn-danger btn-delete btn-xs dossier btn-block">
                                                         Supprimer
                                                       </a>
                                                 </div>
