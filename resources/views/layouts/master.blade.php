@@ -251,7 +251,7 @@
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-6">
-                                <script>document.write(new Date().getFullYear())</script> &copy; CS Kaporo Fondis by Fatoumata Thiro BAH et Hadja Sory Binta BAH
+                                <script>document.write(new Date().getFullYear())</script> &copy; CS Kaporo Fondis by Fatoumata Thioro BAH et Hadja Sory Binta BAH
                             </div>
                             <div class="col-md-6">
                                 <div class="text-md-right footer-links d-none d-sm-block">
