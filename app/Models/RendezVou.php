@@ -11,11 +11,11 @@ use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class RendezVou
- * 
+ *
  * @property int $id_rendez_vous
  * @property Carbon $date_rendez_vous
  * @property int $id_dossier
- * 
+ *
  * @property DossierPatient $dossierPatient
  *
  * @package App\Models

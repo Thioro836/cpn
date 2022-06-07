@@ -160,6 +160,12 @@
 
                         <ul id="side-menu">
                             <li>
+                                <a href="/">
+
+                                    <span> Calendrier des consultations </span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('categorie-antecedent.index') }}">
 
                                     <span> Categorie antecedent </span>
@@ -284,7 +290,7 @@
         <script src="{{ asset('assets/libs/fullcalendar/locales/fr.js') }}"></script>
 
          <!-- Calendar init -->
-         <script src="{{ asset('assets/js/pages/calendar.init.js') }}"></script>
+
          <!-- Init js-->
          <script src="{{ asset('assets/js/pages/form-wizard.init.js') }}"></script>
          <script src="{{ asset('assets/libs/tippy.js/tippy.all.min.js') }}"></script>

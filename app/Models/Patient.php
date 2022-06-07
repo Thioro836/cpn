@@ -58,6 +58,11 @@ class Patient extends Model
 		'telephone_mari'
 	];
 
+    public function nomComplet()
+	{
+		return "{$this->prenom_patient} {$this->nom_patient}";
+	}
+
 	public function dossierPatients()
 	{
 		return $this->hasMany(DossierPatient::class, 'id_patient');
