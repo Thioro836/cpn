@@ -96,7 +96,7 @@ class SituationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dossier =DossierPatient::find($dossier);
+        $dossier =DossierPatient::find($request->$dossier);
         Situation::find($id)->update([
             'numero'=> $request->numero,
             'sexe_enfant'=> $request->sexe_enfant,
@@ -104,7 +104,7 @@ class SituationController extends Controller
             'age_enfant'=> $request->age_enfant,
             'cause_deces'=> $request->cause_deces,
             'id_dossier'=> $request->dossier,
-            'id_categorie_situation' => $request->categorie
+            //'id_categorie_situation' => $request->categorie
            ]);
            return redirect("/situation?dossier=".$dossier->id_dossier)->with('message',"enregistrement reussi");
     }
