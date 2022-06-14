@@ -162,14 +162,14 @@
                             <li>
                                 <a href="/">
 
-                                    <span> Calendrier des consultations </span>
+                                    <span class="text-weight-bold"> Calendrier des consultations </span>
                                 </a>
                             </li>
                             @if (Auth::user()->isAdmin())
                                 <li>
                                     <a href="{{ route('categorie-antecedent.index') }}">
 
-                                        <span> Categorie antecedent </span>
+                                        <span > Categorie antecedent </span>
                                     </a>
                                 </li>
                                 <li>

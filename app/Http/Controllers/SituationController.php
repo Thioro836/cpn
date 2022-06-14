@@ -107,7 +107,7 @@ class SituationController extends Controller
             'age_enfant'=> $request->age_enfant,
             'cause_deces'=> $request->cause_deces,
             'id_dossier'=> $request->dossier,
-            'id_categorie_situation' => $request->categorie
+            //'id_categorie_situation' => $request->categorie
            ]);
            return redirect("/situation?dossier=".$dossier->id_dossier)->with('message',"enregistrement reussi");
     }

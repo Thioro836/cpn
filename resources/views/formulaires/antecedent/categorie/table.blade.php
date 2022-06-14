@@ -14,11 +14,11 @@
                 <tr>
                     <th scope="row">{{ $key+1 }}</th>
                     <td>{{ $categorie->nom_cat_antecedent }}</td>
-                    <td class="text-right">
-                        <a href="{{ route('categorie-antecedent.edit', $categorie->id_categorie_antecedent) }}" class="btn btn-info">
+                    <td class="text-right ">
+                        <a href="{{ route('categorie-antecedent.edit', $categorie->id_categorie_antecedent) }}" class="btn btn-info ">
                             Modifier
                         </a>
-                        <a href="{{ route('categorie-antecedent.destroy', $categorie->id_categorie_antecedent) }}" class="btn btn-danger btn-delete">
+                        <a href="{{ route('categorie-antecedent.destroy', $categorie->id_categorie_antecedent) }}" class="btn btn-danger btn-delete ">
                             Supprimer
                         </a>
                     </td>
