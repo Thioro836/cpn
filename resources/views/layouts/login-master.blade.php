@@ -117,12 +117,12 @@
             <!-- Auth fluid right content -->
             <div class="auth-fluid-right text-center">
                 <div class="auth-user-testimonial">
-                    <h2 class="mb-3 text-white">{{ __("Application de gestion des consultations prenatale") }}</h2>
+                    <h2 class="mb-3 text-white">{{ __("Application de gestion des consultations prénatales") }}</h2>
                     {{-- <p class="lead">
                         <i class="mdi mdi-format-quote-open"></i>{{ __('Bembeya Group') }}<i class="mdi mdi-format-quote-close"></i>
                     </p> --}}
                     <h5 class="text-white">
-                        {{ __('Dévelopée par Fatoumata Thiro BAH et Hadja Sory Binta BAH') }}
+                        {{ __('Dévelopée par Fatoumata Thioro BAH et Hadja Sory Binta BAH') }}
                     </h5>
                 </div> <!-- end auth-user-testimonial-->
             </div>
