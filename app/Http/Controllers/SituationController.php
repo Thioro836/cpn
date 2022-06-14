@@ -100,7 +100,7 @@ class SituationController extends Controller
 
         $dossier = $situation->dossierPatient;
 
-        Antecedent::find($id)->update([
+        Situation::find($id)->update([
             'numero'=> $request->numero,
             'sexe_enfant'=> $request->sexe_enfant,
             'vivant'=> $request->vivant,
