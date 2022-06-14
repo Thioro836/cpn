@@ -116,7 +116,7 @@ class AgentSanteController extends Controller
     {
         $agent=AgentSante::find($id);
         $agent->update(
-            $request->all()
+            $request->except(['admin'])
         );
 
         $agent->update(['admin' => false]);
