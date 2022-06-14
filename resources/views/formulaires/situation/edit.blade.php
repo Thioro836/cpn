@@ -1,8 +1,9 @@
 <div class="card-box">
     <h4 class="header-title text-center">Ajouter une situation</h4>
     @include('layouts.message')
-    <form action="{{ route('situation.update', $situation->id_situattion) }}" method="post">
+    <form action="{{ route('situation.update', $situation->id_situattion) }}" method="POST">
         @csrf
+        @method('PUT')
         <input type="hidden" name="dossier" value="{{ $dossier->id_dossier }}">
         <div class="form-group">
             <label for="numero">Categorie</label>
