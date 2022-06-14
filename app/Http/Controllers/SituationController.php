@@ -80,10 +80,10 @@ class SituationController extends Controller
         $situation = Situation::find($id); //recuperer l'id de la ligne
         return view('situation',[
             'form' => 'formulaires.situation.edit',
-            'situations'=> $dossier->situations()->get(),
+            'situations'=> $situation->dossierPatient->situations()->get(),
             'categories'=> CategorieSituation::get(), //la clé devient la variable qui stocke l'id dans le fichier blade au niveau du bouton
             'situation'=> $situation,
-            'dossier'=> $situation->dossierPatient
+            'dossier'=> $situation->dossierPatient,
         ]);
     }
 
@@ -96,17 +96,15 @@ class SituationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $situation = Situation::find($id);
-
-        $dossier = $situation->dossierPatient;
-
-        Antecedent::find($id)->update([
+        $dossier =DossierPatient::find($dossier);
+        Situation::find($id)->update([
             'numero'=> $request->numero,
             'sexe_enfant'=> $request->sexe_enfant,
             'vivant'=> $request->vivant,
             'age_enfant'=> $request->age_enfant,
             'cause_deces'=> $request->cause_deces,
-            'id_categorie_situation' => $request->categorie,
+            'id_dossier'=> $request->dossier,
+            'id_categorie_situation' => $request->categorie
            ]);
            return redirect("/situation?dossier=".$dossier->id_dossier)->with('message',"enregistrement reussi");
     }
