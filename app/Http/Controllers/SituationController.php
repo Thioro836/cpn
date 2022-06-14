@@ -96,7 +96,10 @@ class SituationController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $dossier =DossierPatient::find($request->$dossier);
+        $situation = Situation::find($id);
+
+        $dossier = $situation->dossierPatient;
+
         Situation::find($id)->update([
             'numero'=> $request->numero,
             'sexe_enfant'=> $request->sexe_enfant,
