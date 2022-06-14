@@ -90,7 +90,7 @@ function create_rendez_vous($dossier, $date, $semaine){
 		'date_rendez_vous' => $date,
 		'id_dossier' => $dossier->id_dossier
 	])->update([
-		'date_rappel' => $date_rappel,
+		'date_rapel' => $date_rappel,
 	]);
 
 	return Carbon::parse($date)->format('d/m/Y');
