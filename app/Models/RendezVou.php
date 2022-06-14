@@ -37,7 +37,8 @@ class RendezVou extends Model
 
 	protected $fillable = [
 		'date_rendez_vous',
-		'id_dossier'
+		'id_dossier',
+		'date_rapel'
 	];
 
 	public function dossierPatient()
