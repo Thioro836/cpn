@@ -27,9 +27,11 @@
                                     <div class="row align-items-center">
                                         <div class="col-auto">
                                             <div class="avatar-sm">
-                                                <span class="avatar-title bg-soft-primary text-primary rounded">
-                                                    <i class="mdi mdi-folder-zip font-28"></i>
-                                                </span>
+                                                <a href="javascript: void(0);" data-href="{{ route('dossiers.show', $dossier->id_dossier) }}" class="btn btn-secondary btn-sm btn-block btn-details">
+                                                    <span class="avatar-title bg-soft-primary text-primary rounded">
+                                                        <i class="mdi mdi-folder-zip font-28"></i>
+                                                    </span>
+                                                </a>
                                             </div>
                                         </div>
                                         <div class="col pl-0">
@@ -62,4 +64,29 @@
             @include('formulaires.dossier.create')
         </div>
     </div>
+@endsection
+@section('script')
+    <script>
+        $(document).ready(function() {
+
+            $('.btn-details').on('click', function(e) {
+                e.preventDefault();
+
+                var url = $(this).attr('data-href');
+
+                $.confirm({
+                    type: 'green',
+                    columnClass: 'col-md-6',
+                    content: "url:"+url,
+                    title: "Informations sur le dossier",
+                    theme: 'material',
+                    buttons: {
+                        OK: function(){
+                            return true;
+                        }
+                    }
+                });
+            });
+        });
+    </script>
 @endsection
