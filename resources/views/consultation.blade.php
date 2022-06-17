@@ -126,13 +126,6 @@
 
             var id=$("select[name=categorie] option:selected").val();
             getAntecedants(id);
-        });
-    </script>
-@endsection
-@section('script')
-    <script>
-        $(document).ready(function() {
-
             $('.btn-details').on('click', function(e) {
                 e.preventDefault();
 

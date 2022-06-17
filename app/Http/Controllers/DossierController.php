@@ -111,7 +111,9 @@ class DossierController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('formulaires.dossier.details', [
+            'dossier' => DossierPatient::find($id)
+        ]);
     }
 
     /**
