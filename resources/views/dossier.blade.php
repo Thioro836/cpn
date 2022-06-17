@@ -28,8 +28,8 @@
                                         <div class="col-auto">
                                             <div class="avatar-sm">
                                                 <a href="javascript: void(0);" data-href="{{ route('dossiers.show', $dossier->id_dossier) }}" class="btn btn-secondary btn-sm btn-block btn-details">
-                                                    <span class="avatar-title bg-soft-primary text-primary rounded">
-                                                        <i class="mdi mdi-folder-zip font-28"></i>
+                                                    <span class="avatar-title  rounded">
+                                                        <i class="mdi mdi-eye font-28"></i>
                                                     </span>
                                                 </a>
                                             </div>

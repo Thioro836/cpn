@@ -125,15 +125,18 @@
             });
 
             var id=$("select[name=categorie] option:selected").val();
+
             getAntecedants(id);
+
             $('.btn-details').on('click', function(e) {
+
                 e.preventDefault();
 
                 var url = $(this).attr('data-href');
 
                 $.confirm({
                     type: 'green',
-                    columnClass: 'col-md-6',
+                    columnClass: 'col-md-12',
                     content: "url:"+url,
                     title: "Informations sur la patiente",
                     theme: 'material',

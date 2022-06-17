@@ -26,7 +26,14 @@
         <div class="form-group">
             <label for="groupe_sanguin">Groupe sanguin et Facteur Rhésus </label>
             <select name="groupe_sanguin" class="form-control" id="">
-                <option value="O+">O+</option>
+                <option value="O+">O +</option>
+                <option value="A+">A +</option>
+                <option value="B+">B +</option>
+                <option value="O-">O -</option>
+                <option value="A-">A -</option>
+                <option value="AB+">AB +</option>
+                <option value="B-">B -</option>
+                <option value="AB-">AB -</option>
             </select>
 
         </div>

@@ -1,31 +1,67 @@
 <div class="card">
     <div class="card-body">
         <div class="d-flex align-items-start mb-3">
-            <img class="d-flex me-3 rounded-circle avatar-lg" src="{{ asset("assets/images/users/user-8.jpg") }}" alt="Generic placeholder image">
             <div class="w-100 ml-2">
                 <h4 class="mt-0 mb-1">{{$consultation->dossierPatient->patient->nomComplet() }}</h4>
                 <p class="text-muted">{{$consultation->dossierPatient->patient->profession_patient }}</p>
             </div>
         </div>
 
-        <h5 class="mb-3 mt-4 text-uppercase bg-light p-2">
-            <i class="mdi mdi-account-circle me-1"></i> 
-        </h5>
-        <div class="">
-
-            <h4 class="font-13 text-muted text-uppercase mb-1">date consultation</h4>
-            <p class="mb-3"> {{ $consultation->date_consultation }}</p>
-
-            <h4 class="font-13 text-muted text-uppercase mb-1">Age gestationel</h4>
-            <p class="mb-3">{{ $consultation->age_gestationnel }}</p>
-
-            <h4 class="font-13 text-muted text-uppercase mb-1">Poids</h4>
-            <p class="mb-3"> {{ $consultation->poids }}</p>
-            <h4 class="font-13 text-muted text-uppercase mb-1">Hauteur utérine</h4>
-            <p class="mb-3"> {{ $consultation->haut_uterine }}</p>
-            <h4 class="font-13 text-muted text-uppercase mb-1">Tension Arterielle</h4>
-            <p class="mb-3"> {{ $consultation->tension_arterielle }}</p>
-
+        <div class="row">
+            <div class="col-md-4">
+                <label for="">Date consultation: {{ dateFormat($consultation->date_consultation) }}</label>
+            </div>
+            <div class="col-md-4">
+                <label for="">Age gestationel: {{ $consultation->age_gestationnel }} mois</label>
+            </div>
+            <div class="col-md-4">
+                <label for="">Poids: {{ $consultation->poids }} Kg</label>
+            </div>
+            <div class="col-md-4">
+                <label for="">Hauteur utérine: {{ $consultation->haut_uterine }} cm</label>
+            </div>
+            <div class="col-md-4">
+                <label for="">Tension Arterielle: {{ $consultation->tension_arterielle }}</label>
+            </div>
+            <div class="col-md-4">
+                <label for=""></label>
+            </div>
         </div>
+        <hr>
+
+        <div class="row">
+            @foreach (page_1() as $name => $question)
+                <div class="col-md-6">
+                    <div class="checkbox checkbox-success form-check-inline ml-1 mb-2">
+                        <input disabled {{ $consultation->getAttribute($name) ? "checked":"" }} name="{{ $name }}" type="checkbox" id="{{ $name }}" >
+                        <label for="{{ $name }}"> {{ $question }} </label>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="row">
+            @foreach (page_2() as $name => $question )
+                <div class="col-md-6">
+                    <div class="checkbox checkbox-success form-check-inline ml-1 mb-2">
+                        <input disabled {{ $consultation->getAttribute($name) ? "checked":"" }} name="{{ $name }}" type="checkbox" id="{{ $name }}" >
+                        <label for="{{ $name }}"> {{ $question }} </label>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
+        <div class="row">
+            @foreach (page_3() as $name => $question )
+                @continue($consultation->dossierPatient->age_gestationnel<8 AND in_array($name, ['position_transverse','siege','gemellaire']))
+                <div class="col-md-6">
+                    <div class="checkbox checkbox-success form-check-inline ml-1 mb-2">
+                        <input disabled {{ $consultation->getAttribute($name) ? "checked":"" }} name="{{ $name }}" type="checkbox" id="{{ $name }}" >
+                        <label for="{{ $name }}"> {!! $question !!}</label> </label>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+
     </div>
 </div>

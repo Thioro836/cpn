@@ -19,6 +19,7 @@
                     start: Date.parse('{{ Carbon\Carbon::parse($rdv->date_rendez_vous)->addHours(8) }}'),
                     end: Date.parse('{{ Carbon\Carbon::parse($rdv->date_rendez_vous)->addHours(18) }}'),
                     className: 'bg-dark text-white',
+                    allDayDefault: true
                 },
             @endforeach
 
@@ -28,9 +29,14 @@
             var calendar = new FullCalendar.Calendar(calendarEl, {
                 initialView: 'dayGridMonth',
                 locale: 'fr',
-                initialEvents: defaultEvents
+                initialEvents: defaultEvents,
+                allDayDefault: true
             });
             calendar.render();
+        });
+
+        $(document).ready(function() {
+            $(".fc-event-time").remove();
         });
     </script>
 
